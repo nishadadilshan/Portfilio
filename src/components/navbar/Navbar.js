@@ -7,9 +7,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import Button from "@mui/material/Button";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+
+import logo from "../../assets/logo.png";
 
 const pages = ["Home", "About", "Portfolio", "Clients"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -34,10 +36,18 @@ function Navbar() {
   // };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ width: "100%" }}>
       <Container maxWidth="xl" style={{ backgroundColor: "black" }}>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { md: "flex", xs: "none" },
+            }}
+          >
+            <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
+          </Box>
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           {/* <Typography
             variant="h6"
             noWrap
@@ -56,7 +66,12 @@ function Navbar() {
             LOGO
           </Typography> */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -92,8 +107,10 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+            <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
+          </Box>
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -110,7 +127,7 @@ function Navbar() {
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -122,36 +139,21 @@ function Navbar() {
               </Button>
             ))}
           </Box>
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Button
+              variant="outlined"
+              size="small"
+              startIcon={<ChatBubbleOutlineIcon />}
+              style={{
+                color: "black",
+                borderRadius: 15,
+                backgroundColor: "white",
+                borderColor: "white",
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+              Contact Me
+            </Button>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

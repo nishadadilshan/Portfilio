@@ -92,7 +92,17 @@ function Navbar() {
                 onClick={() => {
                   console.log("===>>", page);
                 }}
-                sx={{ my: 2, color: "yellow", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  marginX: 2,
+                  ":hover": {
+                    color: "yellow",
+                    paddingBottom: 0.5,
+                    borderBottom: 3,
+                  },
+                }}
               >
                 {page}
               </Button>

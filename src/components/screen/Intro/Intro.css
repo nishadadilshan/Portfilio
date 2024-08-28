@@ -1,0 +1,56 @@
+#intro {
+    height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 92vw;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+    height: 85vh;
+}
+
+.introContent{
+    height: 100vh;
+    width: 100vw;
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hello {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.introName {
+    color: yellow;
+    font-size: 4rem;
+}
+
+.introPara {
+    font-size: large;
+    font-weight: 200;
+}
+
+.btn {
+    background: white;
+    margin: 1rem 0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+}
+
+.hire {
+ object-fit: cover;
+ margin: 0 0.25rem;
+ height: 1rem;
+}

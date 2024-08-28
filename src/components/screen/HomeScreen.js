@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
+import Intro from "./Intro/Intro";
 
 function HomeScreen() {
   return (
     <div>
       <Navbar />
-      <div>Home Screen</div>
+      <Intro />
     </div>
   );
 }

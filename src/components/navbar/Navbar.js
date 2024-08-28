@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xxl" style={{ backgroundColor: "black" }}>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters style={{ marginLeft: 20, marginRight: 20 }}>
           <Box
             sx={{
               flexGrow: 1,

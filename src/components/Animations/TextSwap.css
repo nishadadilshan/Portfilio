@@ -1,6 +1,7 @@
 .text-swap {
     font-size: 3.5rem;
     transition: opacity 0.5s ease-in-out;
+    margin-bottom: 10px;
   }
   
   .fade-in {
@@ -9,5 +10,18 @@
   
   .fade-out {
     opacity: 0;
+  }
+
+  @media screen and (max-width:840px) {
+
+    .text-swap{
+      font-size: 1.5rem;
+    }
+  }
+  @media screen and (max-width:500px) {
+
+    .text-swap{
+      font-size: 1.1rem;
+    }
   }
   

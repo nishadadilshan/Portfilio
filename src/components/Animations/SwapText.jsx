@@ -18,7 +18,7 @@ const TextSwap = ({ texts, interval = 3000 }) => {
   }, [texts.length, interval]);
 
   return (
-    <div className={`text-swap ${fade ? "fade-in" : "fade-out"}`}>
+    <div id="swapdiv" className={`text-swap ${fade ? "fade-in" : "fade-out"}`}>
       {texts[currentTextIndex]}
     </div>
   );

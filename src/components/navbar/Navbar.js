@@ -26,7 +26,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xxl" style={{ backgroundColor: "black" }}>
         <Toolbar disableGutters style={{ marginLeft: 20, marginRight: 20 }}>
           <Box

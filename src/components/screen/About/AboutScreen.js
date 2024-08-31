@@ -1,0 +1,59 @@
+import React from "react";
+import "./About.css";
+import UIDesign from "../../../assets/ui-design.png";
+import WebDesign from "../../../assets/website-design.png";
+import AppDesign from "../../../assets/app-design.png";
+
+function AboutScreen() {
+  return (
+    <section id="about">
+      <span className="aboutTitle">What I do</span>
+      <span className="skillDescription">
+        I am a versatile mobile app developer with extensive experience in
+        creating high-quality applications using React Native and Flutter. My
+        expertise extends to full-stack development, where I have a solid
+        foundation in both back-end development and web application development,
+        allowing me to deliver end-to-end solutions. Additionally, I have a
+        strong background in UI/UX design, which enables me to craft visually
+        appealing and user-friendly interfaces that enhance the overall user
+        experience.{" "}
+        <div className="skillBars">
+          <div className="skillBar">
+            <img src={AppDesign} alt="AppDesign" className="skillBarImg" />
+            <div className="skillBarText">
+              <h2>Mobile Application Developement</h2>
+              <p>
+                I develop cross-platform mobile applications using React Native
+                and Flutter, creating efficient and user-friendly experiences on
+                both iOS and Android.
+              </p>
+            </div>
+          </div>
+          <div className="skillBar">
+            <img src={WebDesign} alt="WebDesign" className="skillBarImg" />
+            <div className="skillBarText">
+              <h2>Web Application Development</h2>
+              <p>
+                I develop web applications using React, Node.js, and Spring
+                Boot, delivering robust and scalable solutions with a focus on
+                performance and user experience.
+              </p>
+            </div>
+          </div>
+          <div className="skillBar">
+            <img src={UIDesign} alt="UIDesign" className="skillBarImg" />
+            <div className="skillBarText">
+              <h2>UI/UX Design</h2>
+              <p>
+                I have experience in UI/UX design, using tools like Figma to
+                create intuitive and visually appealing user interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </span>
+    </section>
+  );
+}
+
+export default AboutScreen;

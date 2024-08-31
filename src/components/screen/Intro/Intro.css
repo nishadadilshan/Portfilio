@@ -13,13 +13,15 @@
     right: 0;
     z-index: -1;
     object-fit: cover;
-    height: 85vh;
+    height: 90vh;
+    /* width: 40vw; */
+    
 }
 
 .introContent{
     height: 100vh;
     width: 65vw;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
@@ -28,13 +30,13 @@
 }
 
 .hello {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
 }
 
 .introName {
     color: yellow;
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 .introPara {
@@ -76,6 +78,9 @@
         align-items: flex-start;
         justify-content: flex-start;
     }
+    .hello{
+        font-size: 1.5rem;
+    }
     
     
 }
@@ -84,5 +89,17 @@
  
     .introPara{
         display: none;
+    } 
+    .introName{
+        font-size: 2.7rem;
+    }
+    .introText{
+        font-size: 2.5rem;
+    }
+    .hello{
+        font-size: 1.5rem;
+    }
+    .bg{
+        right: -15vw;
     } 
 }

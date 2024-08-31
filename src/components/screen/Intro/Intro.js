@@ -1,6 +1,6 @@
 import React from "react";
 import "./Intro.css";
-import bg from "../../../assets/Crop_img.png";
+import bg from "../../../assets/Dilshan_Crop.png";
 import hireme from "../../../assets/hireme.png";
 import { Link } from "react-scroll";
 import TextSwap from "../../Animations/SwapText";

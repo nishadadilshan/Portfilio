@@ -46,17 +46,17 @@ function ClientsandContact() {
           <button type="submit" value="send" className="submitBtn">
             Submit
           </button>
-          <div className="links">
-            <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
-            <img
-              src={stackOverflowIcon}
-              alt="stackOverflowIcon"
-              className="link1"
-            />
-            <img src={facebookIcon} alt="facebookIcon" className="link" />
-            <img src={instagramIcon} alt="instagramIcon" className="link" />
-          </div>
         </form>
+        <div className="links">
+          <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
+          <img
+            src={stackOverflowIcon}
+            alt="stackOverflowIcon"
+            className="link1"
+          />
+          <img src={facebookIcon} alt="facebookIcon" className="link" />
+          <img src={instagramIcon} alt="instagramIcon" className="link" />
+        </div>
       </div>
     </section>
   );

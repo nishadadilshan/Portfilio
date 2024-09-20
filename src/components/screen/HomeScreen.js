@@ -4,6 +4,7 @@ import Intro from "./Intro/Intro";
 import AboutScreen from "./About/AboutScreen";
 import PortfolioScreen from "./Portfolio/PortfolioScreen";
 import ClientsandContact from "./ClientsandContactScreen/ClientsandContact";
+import { Footer } from "../Footer/Footer";
 
 function HomeScreen() {
   return (
@@ -13,6 +14,7 @@ function HomeScreen() {
       <AboutScreen />
       <PortfolioScreen />
       <ClientsandContact />
+      <Footer />
     </div>
   );
 }

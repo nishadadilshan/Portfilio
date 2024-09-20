@@ -20,7 +20,23 @@
     
 }
 
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 75vw;
+    margin: 0 auto;
+}
+
 .clientsHeading{
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contactHeading{
     font-size: 3.5rem;
     font-weight: 700;
     margin-top: 20px;
@@ -33,9 +49,16 @@
     max-width: 70vw;
 }
 
+.contactDes{
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 70vw;
+}
+
 .clientImgs{
     margin: 3rem 0;
     display: flex;
+    flex-wrap: wrap;
     width: 75vw;
     flex-direction: row;
 }
@@ -51,4 +74,69 @@
     background-color: rgb(44, 44, 44);
     
 
+}
+
+.contactForm{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 75vw;
+}
+
+.name, .email, .msg{
+    font-size: medium;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgb(40, 40, 40);
+}
+
+.submitBtn{
+    width: 8rem;
+    background: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+/* .linkgitstack{
+    width: 6.8rem;
+    height: 6.8rem;
+    border: none;
+    border-radius: 10rem;
+    object-fit: cover;
+    margin-left: 2rem;
+
+    
+} */
+
+.link{
+    object-fit: cover;
+    height: 4rem;
+    width: 4rem;
+    margin: 0 0.75rem;
+    margin-left: 2rem;
+} 
+
+.link1{
+    border-radius: 5rem;
+    object-fit: cover;
+    height: 3.6rem;
+    width: 3.6rem;
+    margin: 0 0.75rem;
+    margin-left: 2rem;
+} 
+
+.links{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -5,6 +5,11 @@ import Client1 from "../../../assets/client1.jpg";
 import Client2 from "../../../assets/client2.webp";
 import Client3 from "../../../assets/client3.jpg";
 
+import facebookIcon from "../../../assets/facebook-icon.png";
+import gitHubIcon from "../../../assets/git-hub-1.png";
+import stackOverflowIcon from "../../../assets/stack-overflow.png";
+import instagramIcon from "../../../assets/instagram.png";
+
 function ClientsandContact() {
   return (
     <section id="clientsandContact">
@@ -23,7 +28,36 @@ function ClientsandContact() {
           {/* <img src="" alt="" className="clientImg" /> */}
         </div>
       </div>
-      <div className="contact"></div>
+      <div className="contact">
+        <span className="contactHeading">Contact me</span>
+        <span className="contactDes">
+          Please fill out the form below to discuss any work opportunities.
+        </span>
+        <form action="" className="contactForm">
+          <input type="text" className="name" placeholder="Your Name" />
+          <input type="email" className="email" placeholder="Your Email" />
+          <textarea
+            className="msg"
+            name="message"
+            id=""
+            rows={5}
+            placeholder="Your Message"
+          ></textarea>
+          <button type="submit" value="send" className="submitBtn">
+            Submit
+          </button>
+          <div className="links">
+            <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
+            <img
+              src={stackOverflowIcon}
+              alt="stackOverflowIcon"
+              className="link1"
+            />
+            <img src={facebookIcon} alt="facebookIcon" className="link" />
+            <img src={instagramIcon} alt="instagramIcon" className="link" />
+          </div>
+        </form>
+      </div>
     </section>
   );
 }

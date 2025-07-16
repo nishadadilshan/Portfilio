@@ -32,7 +32,7 @@ function ClientsandContact() {
           {/* <img src="" alt="" className="clientImg" /> */}
         </div>
       </div>
-      <div className="contact">
+      <div className="contact" id="contact">
         <span className="contactHeading">Contact me</span>
         <span className="contactDes">
           Please fill out the form below to discuss any work opportunities.

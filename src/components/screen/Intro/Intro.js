@@ -20,9 +20,15 @@ const Intro = () => {
           I'm a web and mobile app developer with a knack for creating sleek,
           user-friendly digital experiences.I specialize in building responsive
           websites and innovative apps that combine functionality with great
-          design. Let’s create something extraordinary together!
+          design. Let's create something extraordinary together!
         </p>
-        <Link>
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
           <button className="btn">
             {" "}
             <img src={hireme} alt="hite me" className="hire" /> Hire me

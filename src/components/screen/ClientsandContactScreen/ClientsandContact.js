@@ -10,7 +10,7 @@ import Client5 from "../../../assets/client5.jpg";
 import facebookIcon from "../../../assets/facebook-icon.png";
 import gitHubIcon from "../../../assets/git-hub-1.png";
 import stackOverflowIcon from "../../../assets/stack-overflow.png";
-import instagramIcon from "../../../assets/instagram.png";
+import linkedinIcon from "../../../assets/linkedinIcon.png";
 
 function ClientsandContact() {
   return (
@@ -52,14 +52,22 @@ function ClientsandContact() {
           </button>
         </form>
         <div className="links">
-          <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
-          <img
-            src={stackOverflowIcon}
-            alt="stackOverflowIcon"
-            className="link1"
-          />
-          <img src={facebookIcon} alt="facebookIcon" className="link" />
-          <img src={instagramIcon} alt="instagramIcon" className="link" />
+          <a href="https://github.com/nishadadilshan" target="_blank" rel="noopener noreferrer">
+            <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
+          </a>
+          <a href="https://stackoverflow.com/users/13835917/nishada-dilshan-weerathunga" target="_blank" rel="noopener noreferrer">
+            <img
+              src={stackOverflowIcon}
+              alt="stackOverflowIcon"
+              className="link1"
+            />
+          </a>
+          <a href="https://www.facebook.com/nishada.dilshanweerathunga" target="_blank" rel="noopener noreferrer">
+            <img src={facebookIcon} alt="facebookIcon" className="link" />
+          </a>
+                      <a href="https://www.linkedin.com/in/dilshan-weerathunga/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinIcon} alt="linkedinIcon" className="link" />
+            </a>
         </div>
       </div>
     </section>

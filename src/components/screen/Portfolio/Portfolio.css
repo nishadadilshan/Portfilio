@@ -26,12 +26,22 @@
 
 .workImgs{
     margin-top: 50px;
+    transition: all 0.5s ease-in-out;
 }
 
 .workImg{
     object-fit: cover;
     height: 80vh;
     margin: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.workImg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .seeMore{
@@ -42,6 +52,53 @@
     font-size: 15px;
     font-weight: 450;
     border: none;
-    
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seeMore:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.seeMore:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.seeMore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.seeMore:hover::before {
+    left: 100%;
+}
+
+/* Animation for new images appearing */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.workImg.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Portfolio.css";
 
 import Img1 from "../../../assets/img1.jpg";
@@ -7,12 +7,49 @@ import Img3 from "../../../assets/img3.jpg";
 import Img4 from "../../../assets/img4.jpg";
 import Img5 from "../../../assets/img5.jpg";
 import Img6 from "../../../assets/img6.jpg";
-import Img7 from "../../../assets/img7.jpg";
-import Img8 from "../../../assets/img8.jpg";
+import Img7 from "../../../assets/img7.PNG";
+import Img8 from "../../../assets/img8.PNG";
 import Img9 from "../../../assets/img9.jpg";
+import Img10 from "../../../assets/img10.jpg";
 import { Alert } from "@mui/material";
 
 function PortfolioScreen() {
+  const [showMore, setShowMore] = useState(false);
+  const [animateImages, setAnimateImages] = useState(false);
+
+  const initialImages = [
+    { src: Img7, alt: "Img7" },
+    { src: Img1, alt: "Img1" },
+    { src: Img2, alt: "Img2" },
+    { src: Img3, alt: "Img3" },
+    { src: Img5, alt: "Img5" },
+    { src: Img6, alt: "Img6" },
+  ];
+
+  const additionalImages = [
+    { src: Img4, alt: "Img4" },
+    { src: Img8, alt: "Img8" },
+    { src: Img9, alt: "Img9" },
+    { src: Img10, alt: "Img10" },
+  ];
+
+  const displayedImages = showMore 
+    ? [...initialImages, ...additionalImages]
+    : initialImages;
+
+  const handleSeeMore = () => {
+    if (!showMore) {
+      setShowMore(true);
+      // Trigger animation for new images after a short delay
+      setTimeout(() => {
+        setAnimateImages(true);
+      }, 100);
+    } else {
+      setShowMore(false);
+      setAnimateImages(false);
+    }
+  };
+
   return (
     <section id="works">
       <span className="worksTitle">My Portfolio</span>
@@ -23,14 +60,21 @@ function PortfolioScreen() {
         establish a robust online presence.
       </span>
       <div className="workImgs">
-        <img src={Img1} alt="Img1" className="workImg" />
-        <img src={Img2} alt="Img2" className="workImg" />
-        <img src={Img3} alt="Img3" className="workImg" />
-        <img src={Img4} alt="Img4" className="workImg" />
-        <img src={Img5} alt="Img5" className="workImg" />
-        <img src={Img6} alt="Img6" className="workImg" />
+        {displayedImages.map((image, index) => (
+          <img 
+            key={index}
+            src={image.src} 
+            alt={image.alt} 
+            className={`workImg ${showMore && index >= initialImages.length && animateImages ? 'animate-in' : ''}`}
+            style={{
+              animationDelay: showMore && index >= initialImages.length ? `${(index - initialImages.length) * 0.1}s` : '0s'
+            }}
+          />
+        ))}
       </div>
-      <button className="seeMore">See more</button>
+      <button className="seeMore" onClick={handleSeeMore}>
+        {showMore ? "See less" : "See more"}
+      </button>
     </section>
   );
 }

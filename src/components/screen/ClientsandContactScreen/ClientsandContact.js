@@ -4,6 +4,8 @@ import "./Clients.css";
 import Client1 from "../../../assets/client1.jpg";
 import Client2 from "../../../assets/client2.webp";
 import Client3 from "../../../assets/client3.jpg";
+import Client4 from "../../../assets/client4.png";
+import Client5 from "../../../assets/client5.jpg";
 
 import facebookIcon from "../../../assets/facebook-icon.png";
 import gitHubIcon from "../../../assets/git-hub-1.png";
@@ -23,6 +25,8 @@ function ClientsandContact() {
           <img src={Client1} alt="Client1" className="clientImg" />
           <img src={Client2} alt="Client2" className="clientImg" />
           <img src={Client3} alt="Client3" className="clientImg" />
+          <img src={Client4} alt="Client4" className="clientImg" />
+          <img src={Client5} alt="Client5" className="clientImg" />
           {/* <img src={Client2} alt="Client4" className="clientImg" />= */}
           {/* <img src="" alt="" className="clientImg" /> */}
           {/* <img src="" alt="" className="clientImg" /> */}

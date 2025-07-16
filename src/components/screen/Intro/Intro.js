@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import TextSwap from "../../Animations/SwapText";
 
 const Intro = () => {
-  const texts = ["Full Stack Developer", "Cross-Platform Developer"];
+  const texts = ["Frontend Developer", "Full Stack Developer", "Cross-Platform Developer"];
 
   return (
     <section id="intro">

@@ -57,23 +57,32 @@
 
 .clientImgs{
     margin: 3rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    width: 75vw;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0;
 }
-
 
 .clientImg{
     object-fit: contain;
-    margin: auto;
-    height: 6rem;
-    width: 15rem;
-    min-width: 9rem;
-    padding: 0.25rem;
-    background-color: rgb(44, 44, 44);
-    
+    height: 120px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    filter: grayscale(30%);
+    background: transparent;
+}
 
+.clientImg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    filter: grayscale(0%);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, #3a3a3a, #4a4a4a);
 }
 
 .contactForm{
@@ -136,21 +145,55 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    .clientImgs {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0.5rem;
+        padding: 0;
+    }
+    
+    .clientImg {
+        height: 100px;
+        max-width: 250px;
+    }
+    
+    .clientsHeading,
+    .contactHeading {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .clientImgs {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+        padding: 0;
+    }
+    
+    .clientImg {
+        height: 80px;
+        max-width: 200px;
+    }
+    
+    .clientsHeading,
+    .contactHeading {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .link{
-        
-            object-fit: cover;
-            height: 3rem;
-            width: 3rem;
-            margin: 0 0.75rem;
-        
+        object-fit: cover;
+        height: 3rem;
+        width: 3rem;
+        margin: 0 0.75rem;
     }
+    
     .link1{
         border-radius: 5rem;
         object-fit: cover;
         height: 2.6rem;
         width: 2.6rem;
         margin: 0 0.75rem;
-        
     } 
 }

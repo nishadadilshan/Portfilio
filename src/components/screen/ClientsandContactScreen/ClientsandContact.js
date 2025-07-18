@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../../config/emailjs';
 import "./Clients.css";
 
 import Client1 from "../../../assets/client1.jpg";
@@ -21,6 +23,11 @@ function ClientsandContact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -35,15 +42,28 @@ function ClientsandContact() {
     setSubmitStatus('');
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      console.log('Form data submitted:', formData);
+      // EmailJS template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: "Dilshan", // Your name
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams
+      );
+
+      console.log('Email sent successfully:', response);
       
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Form submission failed:', error);
+      console.error('Email sending failed:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

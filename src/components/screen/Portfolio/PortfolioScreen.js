@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Portfolio.css";
 
 import Img1 from "../../../assets/img1.jpg";
@@ -11,7 +11,6 @@ import Img7 from "../../../assets/img7.PNG";
 import Img8 from "../../../assets/img8.PNG";
 import Img9 from "../../../assets/img9.jpg";
 import Img10 from "../../../assets/img10.jpg";
-import { Alert } from "@mui/material";
 
 function PortfolioScreen() {
   const [showMore, setShowMore] = useState(false);

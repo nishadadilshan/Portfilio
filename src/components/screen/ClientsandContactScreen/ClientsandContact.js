@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Clients.css";
 
 import Client1 from "../../../assets/client1.jpg";
@@ -13,6 +13,43 @@ import stackOverflowIcon from "../../../assets/stack-overflow.png";
 import linkedinIcon from "../../../assets/linkedinIcon.png";
 
 function ClientsandContact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log('Form data submitted:', formData);
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="clientsandContact">
       <div className="clients">
@@ -37,21 +74,56 @@ function ClientsandContact() {
         <span className="contactDes">
           Please fill out the form below to discuss any work opportunities.
         </span>
-        <form action="" className="contactForm">
-          <input type="text" className="name" placeholder="Your Name" />
-          <input type="email" className="email" placeholder="Your Email" />
+        <form onSubmit={handleSubmit} className="contactForm">
+          <input 
+            type="text" 
+            className="name" 
+            placeholder="Your Name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+          <input 
+            type="email" 
+            className="email" 
+            placeholder="Your Email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
           <textarea
             className="msg"
             name="message"
-            id=""
             rows={5}
             placeholder="Your Message"
+            value={formData.message}
+            onChange={handleInputChange}
+            required
           ></textarea>
-          <button type="submit" value="send" className="submitBtn">
-            Submit
+          <button 
+            type="submit" 
+            className="submitBtn"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Submit'}
           </button>
+          {submitStatus === 'success' && (
+            <div className="success-message">
+              Thank you! Your message has been sent successfully.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="error-message">
+              Sorry, there was an error sending your message. Please try again.
+            </div>
+          )}
         </form>
         <div className="links">
+          <a href="https://www.linkedin.com/in/dilshan-weerathunga/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinIcon} alt="linkedinIcon" className="link" />
+          </a>
           <a href="https://github.com/nishadadilshan" target="_blank" rel="noopener noreferrer">
             <img src={gitHubIcon} alt="gitHubIcon" className="link1" />
           </a>
@@ -65,9 +137,6 @@ function ClientsandContact() {
           <a href="https://www.facebook.com/nishada.dilshanweerathunga" target="_blank" rel="noopener noreferrer">
             <img src={facebookIcon} alt="facebookIcon" className="link" />
           </a>
-                      <a href="https://www.linkedin.com/in/dilshan-weerathunga/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinIcon} alt="linkedinIcon" className="link" />
-            </a>
         </div>
       </div>
     </section>

@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Portfilio/static/css/main.42e50b86.css",
+    "main.js": "/Portfilio/static/js/main.f56c4e20.js",
+    "static/media/Dilshan_Crop.png": "/Portfilio/static/media/Dilshan_Crop.ef43a36bf64db8336b1c.png",
+    "static/media/img8.PNG": "/Portfilio/static/media/img8.2e11e0380146ea376bef.PNG",
+    "static/media/img12.PNG": "/Portfilio/static/media/img12.e12adc4fe4181a32ef8d.PNG",
+    "static/media/img11.PNG": "/Portfilio/static/media/img11.31bfadebcc1d09015af2.PNG",
+    "static/media/img10.jpg": "/Portfilio/static/media/img10.76f96c774269ca7bf5de.jpg",
+    "static/media/img5.jpg": "/Portfilio/static/media/img5.f69c7d726b913f70c0fc.jpg",
+    "static/media/img7.PNG": "/Portfilio/static/media/img7.c7d33a1cdab34fb25f15.PNG",
+    "static/media/img3.jpg": "/Portfilio/static/media/img3.425feff3efb0ec8ff8ff.jpg",
+    "static/media/img14.jpg": "/Portfilio/static/media/img14.e90f2602c81d8f8de4cd.jpg",
+    "static/media/img2.jpg": "/Portfilio/static/media/img2.be6d2b115cee7fa67586.jpg",
+    "static/media/client3.jpg": "/Portfilio/static/media/client3.0f4cbe18342a6c66e7e8.jpg",
+    "static/media/img1.jpg": "/Portfilio/static/media/img1.2e8d2d834fc94982e821.jpg",
+    "static/media/img4.jpg": "/Portfilio/static/media/img4.bc03799dee12f07bb551.jpg",
+    "static/media/img6.jpg": "/Portfilio/static/media/img6.9e457eb0f4cb331d975d.jpg",
+    "static/media/img13.jpg": "/Portfilio/static/media/img13.c1efa55a41becfb3c83d.jpg",
+    "static/media/img9.jpg": "/Portfilio/static/media/img9.b16f5a71e5dbad272990.jpg",
+    "static/media/client4.png": "/Portfilio/static/media/client4.9a98cefdfecf2b8c4ce1.png",
+    "static/media/logo.png": "/Portfilio/static/media/logo.0fd6ae9b2872ca2cd55d.png",
+    "static/media/linkedinIcon.png": "/Portfilio/static/media/linkedinIcon.8ff3a8e7bcd35d590115.png",
+    "static/media/ui-design.png": "/Portfilio/static/media/ui-design.c4acd455fc2040eddcc8.png",
+    "static/media/client5.jpg": "/Portfilio/static/media/client5.4fdd7ce9b15b3347eaa8.jpg",
+    "static/media/client2.webp": "/Portfilio/static/media/client2.585921fb677636fd6a01.webp",
+    "index.html": "/Portfilio/index.html",
+    "main.42e50b86.css.map": "/Portfilio/static/css/main.42e50b86.css.map",
+    "main.f56c4e20.js.map": "/Portfilio/static/js/main.f56c4e20.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42e50b86.css",
+    "static/js/main.f56c4e20.js"
+  ]
+}

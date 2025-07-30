@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 🚀 Deployment
+
+This portfolio is deployed on GitHub Pages at: **https://nishadadilshan.github.io/Portfilio**
+
+### Updating and Deploying Changes
+
+To update your portfolio and deploy changes:
+
+```bash
+git add .
+git commit -m "Update portfolio"
+git push origin Dilshan
+npm run deploy
+```
+
+### Deployment Commands
+
+- `npm run build` - Builds the app for production
+- `npm run deploy` - Deploys to GitHub Pages (includes build step)
+
 ## Available Scripts
 
 In the project directory, you can run:

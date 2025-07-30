@@ -11,30 +11,33 @@ import Img7 from "../../../assets/img7.PNG";
 import Img8 from "../../../assets/img8.PNG";
 import Img9 from "../../../assets/img9.jpg";
 import Img10 from "../../../assets/img10.jpg";
+import Portfolio1 from "../../../assets/img11.PNG";
+import Portfolio2 from "../../../assets/img12.PNG";
+
 
 function PortfolioScreen() {
   const [showMore, setShowMore] = useState(false);
   const [animateImages, setAnimateImages] = useState(false);
 
-  const initialImages = [
+  const allImages = [
     { src: Img7, alt: "Img7" },
     { src: Img1, alt: "Img1" },
     { src: Img2, alt: "Img2" },
     { src: Img3, alt: "Img3" },
     { src: Img5, alt: "Img5" },
     { src: Img6, alt: "Img6" },
-  ];
-
-  const additionalImages = [
     { src: Img4, alt: "Img4" },
     { src: Img8, alt: "Img8" },
     { src: Img9, alt: "Img9" },
     { src: Img10, alt: "Img10" },
+    { src: Portfolio1, alt: "Portfolio 1", isLandscape: true },
+    { src: Portfolio2, alt: "Portfolio 2", isLandscape: true },
   ];
 
+  const initialCount = 6;
   const displayedImages = showMore 
-    ? [...initialImages, ...additionalImages]
-    : initialImages;
+    ? allImages
+    : allImages.slice(0, initialCount);
 
   const handleSeeMore = () => {
     if (!showMore) {
@@ -42,7 +45,11 @@ function PortfolioScreen() {
       // Trigger animation for new images after a short delay
       setTimeout(() => {
         setAnimateImages(true);
-      }, 100);
+        // Remove animation class after animation completes to prevent conflicts
+        setTimeout(() => {
+          setAnimateImages(false);
+        }, 500);
+      }, 50);
     } else {
       setShowMore(false);
       setAnimateImages(false);
@@ -64,9 +71,9 @@ function PortfolioScreen() {
             key={index}
             src={image.src} 
             alt={image.alt} 
-            className={`workImg ${showMore && index >= initialImages.length && animateImages ? 'animate-in' : ''}`}
+            className={`workImg ${image.isLandscape ? 'landscape' : ''} ${showMore && index >= initialCount && animateImages ? 'animate-in' : ''}`}
             style={{
-              animationDelay: showMore && index >= initialImages.length ? `${(index - initialImages.length) * 0.1}s` : '0s'
+              animationDelay: showMore && index >= initialCount ? `${(index - initialCount) * 0.1}s` : '0s'
             }}
           />
         ))}

@@ -11,6 +11,8 @@ import Img7 from "../../../assets/img7.PNG";
 import Img8 from "../../../assets/img8.PNG";
 import Img9 from "../../../assets/img9.jpg";
 import Img10 from "../../../assets/img10.jpg";
+import Img11 from "../../../assets/img13.jpg";
+import Img12 from "../../../assets/img14.jpg";
 import Portfolio1 from "../../../assets/img11.PNG";
 import Portfolio2 from "../../../assets/img12.PNG";
 
@@ -30,6 +32,8 @@ function PortfolioScreen() {
     { src: Img8, alt: "Img8" },
     { src: Img9, alt: "Img9" },
     { src: Img10, alt: "Img10" },
+    { src: Img11, alt: "Img10" },
+    { src: Img12, alt: "Img10" },
     { src: Portfolio1, alt: "Portfolio 1", isLandscape: true },
     { src: Portfolio2, alt: "Portfolio 2", isLandscape: true },
   ];

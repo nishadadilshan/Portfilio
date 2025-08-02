@@ -63,6 +63,8 @@
     width: 100%;
     max-width: 1400px;
     padding: 0;
+    justify-items: center;
+    align-items: center;
 }
 
 .clientImg{
@@ -75,6 +77,8 @@
     transition: all 0.3s ease;
     filter: grayscale(30%);
     background: transparent;
+    justify-self: center;
+    align-self: center;
 }
 
 .clientImg:hover {
@@ -186,11 +190,15 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 0.5rem;
         padding: 0;
+        justify-items: center;
+        align-items: center;
     }
     
     .clientImg {
         height: 100px;
         max-width: 250px;
+        justify-self: center;
+        align-self: center;
     }
     
     .clientsHeading,
@@ -204,11 +212,15 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
         padding: 0;
+        justify-items: center;
+        align-items: center;
     }
     
     .clientImg {
         height: 80px;
         max-width: 200px;
+        justify-self: center;
+        align-self: center;
     }
     
     .clientsHeading,

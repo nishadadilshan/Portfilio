@@ -89,6 +89,11 @@
     background: linear-gradient(145deg, #3a3a3a, #4a4a4a);
 }
 
+.client6-specific {
+    object-fit: cover;
+    object-position: center;
+}
+
 .contactForm{
     margin: 1rem;
     display: flex;

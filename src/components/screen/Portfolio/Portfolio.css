@@ -41,10 +41,12 @@
 
 /* Landscape images styling */
 .workImg.landscape {
-    height: 50vh;
+    height: auto;
     width: 60vw;
     max-width: 800px;
+    max-height: 50vh;
     margin: 20px;
+    object-fit: contain;
 }
 
 .workImg:hover {
@@ -120,5 +122,22 @@
 /* Ensure consistent transition timing for all images */
 .workImg {
     transition: all 0.3s ease-in-out !important;
+}
+
+/* Responsive design for landscape images */
+@media (max-width: 768px) {
+    .workImg.landscape {
+        width: 80vw;
+        max-width: 500px;
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .workImg.landscape {
+        width: 90vw;
+        max-width: 400px;
+        max-height: 35vh;
+    }
 }
 

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfilio/static/css/main.42e50b86.css",
-    "main.js": "/Portfilio/static/js/main.f56c4e20.js",
+    "main.css": "/Portfilio/static/css/main.b175d92a.css",
+    "main.js": "/Portfilio/static/js/main.002534f7.js",
     "static/media/Dilshan_Crop.png": "/Portfilio/static/media/Dilshan_Crop.ef43a36bf64db8336b1c.png",
     "static/media/img8.PNG": "/Portfilio/static/media/img8.2e11e0380146ea376bef.PNG",
     "static/media/img12.PNG": "/Portfilio/static/media/img12.e12adc4fe4181a32ef8d.PNG",
@@ -25,11 +25,11 @@
     "static/media/client5.jpg": "/Portfilio/static/media/client5.4fdd7ce9b15b3347eaa8.jpg",
     "static/media/client2.webp": "/Portfilio/static/media/client2.585921fb677636fd6a01.webp",
     "index.html": "/Portfilio/index.html",
-    "main.42e50b86.css.map": "/Portfilio/static/css/main.42e50b86.css.map",
-    "main.f56c4e20.js.map": "/Portfilio/static/js/main.f56c4e20.js.map"
+    "main.b175d92a.css.map": "/Portfilio/static/css/main.b175d92a.css.map",
+    "main.002534f7.js.map": "/Portfilio/static/js/main.002534f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.42e50b86.css",
-    "static/js/main.f56c4e20.js"
+    "static/css/main.b175d92a.css",
+    "static/js/main.002534f7.js"
   ]
 }

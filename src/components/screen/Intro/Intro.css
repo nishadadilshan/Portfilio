@@ -191,9 +191,9 @@
 }
 
 .light-btn:hover {
-    background: linear-gradient(45deg, #1976d2, #1565c0);
+    background: linear-gradient(45deg, #FFD700, #FFA500);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(25, 118, 210, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .hire {
@@ -207,9 +207,9 @@
  filter: brightness(0) saturate(100%);
 }
 
-/* Light theme - make icon white for better visibility on blue background */
+/* Light theme - keep icon dark for better visibility on gold background */
 .light-theme .hire {
- filter: brightness(0) saturate(100%) invert(1);
+ filter: brightness(0) saturate(100%);
 }
 
 

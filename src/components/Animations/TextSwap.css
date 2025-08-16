@@ -12,10 +12,6 @@
     opacity: 0;
   }
 
-  #swapdiv{
-    margin-top: -10px;
-  }
-
   @media screen and (max-width:840px) {
 
     .text-swap{

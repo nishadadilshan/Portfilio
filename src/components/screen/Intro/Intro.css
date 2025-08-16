@@ -278,6 +278,9 @@
     
     .introPara {
         font-size: 12px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        max-width: calc(100% - 2rem);
     }
     
     .introContent {
@@ -290,25 +293,21 @@
     }
     
     .introName {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     
     .introText {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 
 @media screen and (max-width: 435px) {
-    .introPara {
-        display: none;
-    } 
-    
     .introName {
-        font-size: 2.7rem;
+        font-size: 3.2rem;
     }
     
     .introText {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     
     .hello {
@@ -318,6 +317,14 @@
     .bg {
         max-width: 90%;
         height: 50vh;
+    }
+    
+    .introPara {
+        font-size: 11px;
+        margin-bottom: 1.5rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        max-width: calc(100% - 3rem);
     }
 }
 

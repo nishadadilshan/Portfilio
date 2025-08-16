@@ -12,7 +12,7 @@ function AboutScreen() {
     <section id="about" className={isDarkMode ? "dark-theme" : "light-theme"}>
       <span className="aboutTitle">What I do</span>
       <span className="skillDescription">
-        I am a versatile mobile app developer with extensive experience in
+        I am a versatile web and mobile app developer with extensive experience in
         creating high-quality applications using React Native and Flutter. My
         expertise extends to full-stack development, where I have a solid
         foundation in both back-end development and web application development,

@@ -53,12 +53,16 @@ function Navbar() {
           >
             <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
           </Box>
+          
+          {/* Mobile Layout */}
           <Box
             sx={{
-              flexGrow: 1,
               display: { xs: "flex", md: "none" },
+              alignItems: 'center',
+              gap: 1,
             }}
           >
+            {/* Menu Button */}
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -69,6 +73,7 @@ function Navbar() {
             >
               <MenuIcon />
             </IconButton>
+            
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -129,7 +134,11 @@ function Navbar() {
               </MenuItem>
             </Menu>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+          
+          {/* Logo with Theme Toggle - Right end of navbar in mobile */}
+          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: 'center', marginLeft: 'auto' }}>
+            {/* Theme Toggle - Left of logo */}
+            <ThemeToggle />
             <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -196,9 +205,7 @@ function Navbar() {
               </Button>
             </Link>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: 'center' }}>
-            <ThemeToggle />
-          </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

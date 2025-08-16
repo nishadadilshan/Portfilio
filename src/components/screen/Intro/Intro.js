@@ -8,7 +8,7 @@ import { useTheme } from "../../../context/ThemeContext";
 import TechnicalExpertise from "./TechnicalExpertise";
 
 const Intro = () => {
-  const texts = ["Frontend Developer", "Full Stack Developer", "Cross-Platform Developer"];
+  const texts = ["Frontend Developer", "Mobile App Developer", "Full Stack Developer", "Software Engineer"];
   const { isDarkMode } = useTheme();
 
   return (

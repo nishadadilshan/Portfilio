@@ -1,7 +1,7 @@
 #about{
 overflow: hidden;
 width: 100vw;
-max-width: 75vw;
+max-width: 90vw;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
@@ -18,9 +18,10 @@ text-align: center;
 }
 
 .skillDescription{
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
-    max-width: 60vw;
+    max-width: 85vw;
+    text-align: justify;
 }
 
 .skillBars{
@@ -29,7 +30,6 @@ text-align: center;
 }
 
 .skillBar{
-    background-color: rgb(46, 46, 46);
     display: flex;
     flex-direction: row;
     text-align: left;
@@ -37,7 +37,20 @@ text-align: center;
     margin: 1rem;
     padding: 1.5rem 2rem;
     border-radius: 20px;
+    transition: background-color 0.3s ease;
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Dark theme skill bar */
+.dark-theme .skillBar {
+    background-color: rgb(46, 46, 46);
+}
+
+/* Light theme skill bar */
+.light-theme .skillBar {
+    background-color: rgb(200, 200, 200);
 }
 
 .skillBarImg{

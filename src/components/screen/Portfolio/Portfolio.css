@@ -57,7 +57,6 @@
 .seeMore{
     padding: 0.5rem 2.5rem;
     border-radius: 20px;
-    background-color: white;
     margin: 3rem 0;
     font-size: 15px;
     font-weight: 450;
@@ -69,11 +68,31 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark theme see more button */
+.dark-theme .seeMore {
+    background-color: white;
+    color: rgb(30, 30, 30);
+}
+
+/* Light theme see more button */
+.light-theme .seeMore {
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
 .seeMore:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+}
+
+/* Dark theme hover */
+.dark-theme .seeMore:hover {
+    background-color: #f0f0f0;
+}
+
+/* Light theme hover */
+.light-theme .seeMore:hover {
+    background-color: rgb(50, 50, 50);
 }
 
 .seeMore:active {

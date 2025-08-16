@@ -110,25 +110,81 @@
     max-width: 40rem;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
-    color: white;
     border: none;
     border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme form inputs */
+.dark-theme .name, 
+.dark-theme .email, 
+.dark-theme .msg {
+    color: white;
     background: rgb(40, 40, 40);
+}
+
+/* Light theme form inputs */
+.light-theme .name, 
+.light-theme .email, 
+.light-theme .msg {
+    color: rgb(30, 30, 30);
+    background: rgb(220, 220, 220);
+    border: 1px solid rgb(180, 180, 180);
+}
+
+/* Focus styles for form inputs */
+.name:focus, .email:focus, .msg:focus {
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.dark-theme .name:focus, 
+.dark-theme .email:focus, 
+.dark-theme .msg:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    background: rgb(50, 50, 50);
+}
+
+.light-theme .name:focus, 
+.light-theme .email:focus, 
+.light-theme .msg:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+    background: rgb(240, 240, 240);
+    border-color: rgb(100, 100, 100);
 }
 
 .submitBtn{
     width: 8rem;
-    background: white;
     padding: 0.75rem 1rem;
     border: none;
     border-radius: 0.5rem;
     margin: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 600;
 }
 
-.submitBtn:hover:not(:disabled) {
+/* Dark theme submit button */
+.dark-theme .submitBtn {
+    background: white;
+    color: rgb(30, 30, 30);
+}
+
+/* Light theme submit button */
+.light-theme .submitBtn {
+    background: rgb(30, 30, 30);
+    color: white;
+}
+
+/* Dark theme submit button hover */
+.dark-theme .submitBtn:hover:not(:disabled) {
     background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Light theme submit button hover */
+.light-theme .submitBtn:hover:not(:disabled) {
+    background: rgb(50, 50, 50);
     transform: translateY(-2px);
 }
 

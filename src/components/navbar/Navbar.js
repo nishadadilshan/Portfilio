@@ -109,6 +109,24 @@ function Navbar() {
                   </Link>
                 </MenuItem>
               ))}
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                style={{ cursor: "pointer" }}
+              >
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <ChatBubbleOutlineIcon sx={{ fontSize: 20 }} />
+                    <Typography textAlign="center">Contact Me</Typography>
+                  </Box>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
@@ -154,20 +172,25 @@ function Navbar() {
               duration={500}
               style={{ textDecoration: "none" }}
             >
-              <Button
-                variant="outlined"
-                size="small"
-                startIcon={<ChatBubbleOutlineIcon />}
-                sx={{
-                  color: isDarkMode ? "white" : "black",
-                  borderRadius: 15,
-                  backgroundColor: isDarkMode ? "transparent" : "white",
-                  borderColor: isDarkMode ? "white" : "black",
-                  "&:hover": {
-                    backgroundColor: isDarkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
-                    borderColor: isDarkMode ? "yellow" : "#1976d2",
-                  }
-                }}
+                             <Button
+                 variant="contained"
+                 size="small"
+                 startIcon={<ChatBubbleOutlineIcon />}
+                 sx={{
+                   color: isDarkMode ? "rgb(30, 30, 30)" : "white",
+                   borderRadius: 15,
+                   backgroundColor: isDarkMode ? "white" : "rgb(30, 30, 30)",
+                   border: "none",
+                   padding: "8px 20px",
+                   fontWeight: 600,
+                   textTransform: "none",
+                   fontSize: "0.875rem",
+                   transition: "all 0.3s ease",
+                   "&:hover": {
+                     backgroundColor: isDarkMode ? "#f0f0f0" : "rgb(50, 50, 50)",
+                     transform: "translateY(-2px)",
+                   }
+                 }}
               >
                 Contact Me
               </Button>

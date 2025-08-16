@@ -1,15 +1,18 @@
 import React from "react";
 import "./About.css";
+import { useTheme } from "../../../context/ThemeContext";
 import UIDesign from "../../../assets/ui-design.png";
 import WebDesign from "../../../assets/website-design.png";
 import AppDesign from "../../../assets/app-design.png";
 
 function AboutScreen() {
+  const { isDarkMode } = useTheme();
+
   return (
-    <section id="about">
+    <section id="about" className={isDarkMode ? "dark-theme" : "light-theme"}>
       <span className="aboutTitle">What I do</span>
       <span className="skillDescription">
-      I am a versatile mobile app developer with extensive experience in
+        I am a versatile mobile app developer with extensive experience in
         creating high-quality applications using React Native and Flutter. My
         expertise extends to full-stack development, where I have a solid
         foundation in both back-end development and web application development,
@@ -45,8 +48,9 @@ function AboutScreen() {
             <div className="skillBarText">
               <h2>Backend Development</h2>
               <p>
-                I have experience in backend development, using Node.js, Spring Boot, Java, and MySQL, Firebase, and MongoDB to
-                create robust and scalable solutions.
+                I have experience in backend development, using Node.js, Spring
+                Boot, Java, and MySQL, Firebase, and MongoDB to create robust
+                and scalable solutions.
               </p>
             </div>
           </div>

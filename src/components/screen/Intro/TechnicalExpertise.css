@@ -266,8 +266,8 @@
 }
 
 .skills-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -352,6 +352,13 @@
 }
 
 /* Responsive skills */
+@media screen and (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .skills-container {
         padding: 0 1rem;
@@ -363,6 +370,11 @@
     
     .skills-header p {
         font-size: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .skill-item {
@@ -389,6 +401,11 @@
     
     .skills-header p {
         font-size: 0.9rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .skill-item {

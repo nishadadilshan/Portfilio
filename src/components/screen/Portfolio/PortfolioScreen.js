@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { useTheme } from "../../../context/ThemeContext";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -26,6 +27,7 @@ import Portfolio2 from "../../../assets/img12.PNG";
 
 function PortfolioScreen() {
   const [isMobile, setIsMobile] = useState(false);
+  const { isDarkMode } = useTheme();
 
   // Portfolio data with topics
   const portfolioData = {
@@ -146,7 +148,7 @@ function PortfolioScreen() {
   };
 
   return (
-    <section id="works">
+    <section id="works" className={isDarkMode ? "dark-theme" : "light-theme"}>
       <span className="worksTitle">My Portfolio</span>
       <span className="worksDes">
         I take pride in my meticulous attention to detail and ensuring that

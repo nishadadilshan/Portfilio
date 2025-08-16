@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '../../../config/emailjs';
+import { useTheme } from "../../../context/ThemeContext";
 import "./Clients.css";
 
 import Client1 from "../../../assets/client1.jpg";
@@ -23,6 +24,7 @@ function ClientsandContact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const { isDarkMode } = useTheme();
 
   // Initialize EmailJS
   useEffect(() => {
@@ -72,7 +74,7 @@ function ClientsandContact() {
   };
 
   return (
-    <section id="clientsandContact">
+    <section id="clientsandContact" className={isDarkMode ? "dark-theme" : "light-theme"}>
       <div className="clients">
         <span className="clientsHeading">My Clients</span>
         <span className="clientsDes">

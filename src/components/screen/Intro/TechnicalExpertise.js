@@ -12,6 +12,20 @@ const TechnicalExpertise = () => {
     css: 0
   });
 
+  // Cursor following effect for stat items
+  const handleMouseMove = (e) => {
+    const statItem = e.currentTarget;
+    const rect = statItem.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const afterElement = statItem.querySelector('::after') || statItem;
+    if (afterElement) {
+      afterElement.style.setProperty('--mouse-x', `${x}px`);
+      afterElement.style.setProperty('--mouse-y', `${y}px`);
+    }
+  };
+
   useEffect(() => {
     const targetCounts = { projects: 25, experience: 5, clients: 6 };
     const duration = 2000;
@@ -79,15 +93,15 @@ const TechnicalExpertise = () => {
       <div className="expertise-container">
         {/* Stats Section */}
         <div className="stats-container">
-          <div className="stat-item">
+          <div className="stat-item" onMouseMove={handleMouseMove}>
             <div className="stat-number">{counts.projects}+</div>
             <div className="stat-label">Projects Completed</div>
           </div>
-          <div className="stat-item">
+          <div className="stat-item" onMouseMove={handleMouseMove}>
             <div className="stat-number">{counts.experience}+</div>
             <div className="stat-label">Years Experience</div>
           </div>
-          <div className="stat-item">
+          <div className="stat-item" onMouseMove={handleMouseMove}>
             <div className="stat-number">{counts.clients}+</div>
             <div className="stat-label">Happy Clients</div>
           </div>

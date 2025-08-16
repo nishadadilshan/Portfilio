@@ -24,7 +24,7 @@ function AboutScreen() {
           <div className="skillBar">
             <img src={AppDesign} alt="AppDesign" className="skillBarImg" />
             <div className="skillBarText">
-              <h2>Mobile Application Developement</h2>
+              <h2>Mobile Application Development</h2>
               <p>
                 I develop cross-platform mobile applications using React Native
                 and Flutter, creating efficient and user-friendly experiences on

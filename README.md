@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 🚀 Deployment
 
-This portfolio is deployed on GitHub Pages at: **https://nishadadilshan.github.io/Portfilio**
+This portfolio is deployed on GitHub Pages at: **https://nishadadilshan.github.io/Portfolio**
 
 ### Updating and Deploying Changes
 

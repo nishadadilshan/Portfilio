@@ -33,7 +33,7 @@ const Intro = () => {
         >
           <button className={`btn ${isDarkMode ? 'dark-btn' : 'light-btn'}`}>
             {" "}
-            <img src={hireme} alt="hite me" className="hire" /> Hire me
+            <img src={hireme} alt="hire me" className="hire" /> Hire me
           </button>
         </Link>
       </div>

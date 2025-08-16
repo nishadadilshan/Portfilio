@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <footer className={`footer ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
-      Copyright &#169; 2025 Dilshan Weerathunga. All right received.
+      Copyright &#169; 2025 Dilshan Weerathunga. All rights reserved.
     </footer>
   );
 };

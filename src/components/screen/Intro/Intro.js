@@ -26,18 +26,20 @@ const Intro = () => {
             websites and innovative apps that combine functionality with great
             design. Let's create something extraordinary together!
           </p>
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <button className={`btn ${isDarkMode ? 'dark-btn' : 'light-btn'}`}>
-              {" "}
-              <img src={hireme} alt="hire me" className="hire" /> Hire me
-            </button>
-          </Link>
+          <div className="button-wrapper">
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <button className={`btn ${isDarkMode ? 'dark-btn' : 'light-btn'}`}>
+                {" "}
+                <img src={hireme} alt="hire me" className="hire" /> Hire me
+              </button>
+            </Link>
+          </div>
         </div>
         <img src={bg} alt="Profile" className="bg" />
       </section>

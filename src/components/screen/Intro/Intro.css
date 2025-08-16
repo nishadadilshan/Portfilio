@@ -158,7 +158,7 @@
 }
 
 .btn {
-    margin: 1rem 0;
+    margin: 0;
     padding: 1rem 2rem;
     border-radius: 2rem;
     border: none;
@@ -321,3 +321,7 @@
     }
 }
 
+.button-wrapper {
+    margin: 0;
+    display: inline-block;
+}

@@ -11,6 +11,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { Link } from "react-scroll";
+import { useTheme } from "../../context/ThemeContext";
+import ThemeToggle from "../ThemeToggle";
 import logo from "../../assets/logo.png";
 
 const pages = [
@@ -22,6 +24,7 @@ const pages = [
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { isDarkMode } = useTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -32,8 +35,15 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="sticky">
-      <Container maxWidth="xxl" style={{ backgroundColor: "black" }}>
+    <AppBar 
+      position="sticky"
+      sx={{
+        backgroundColor: isDarkMode ? 'rgba(0, 0, 0, 0.9)' : 'rgba(224, 224, 224, 0.9)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: isDarkMode ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.1)'
+      }}
+    >
+      <Container maxWidth="xxl">
         <Toolbar disableGutters style={{ marginLeft: 20, marginRight: 20 }}>
           <Box
             sx={{
@@ -75,6 +85,10 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
+                '& .MuiPaper-root': {
+                  backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff',
+                  color: isDarkMode ? '#ffffff' : '#000000',
+                }
               }}
             >
               {pages.map((page) => (
@@ -114,7 +128,7 @@ function Navbar() {
                 <Button
                   sx={{
                     my: 2,
-                    color: "white",
+                    color: isDarkMode ? "white" : "black",
                     display: "block",
                     marginX: 2,
                     ":hover": {
@@ -129,7 +143,8 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center' }}>
+            <ThemeToggle />
             <Link
               to="contact"
               spy={true}
@@ -142,16 +157,23 @@ function Navbar() {
                 variant="outlined"
                 size="small"
                 startIcon={<ChatBubbleOutlineIcon />}
-                style={{
-                  color: "black",
+                sx={{
+                  color: isDarkMode ? "white" : "black",
                   borderRadius: 15,
-                  backgroundColor: "white",
-                  borderColor: "white",
+                  backgroundColor: isDarkMode ? "transparent" : "white",
+                  borderColor: isDarkMode ? "white" : "black",
+                  "&:hover": {
+                    backgroundColor: isDarkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
+                    borderColor: isDarkMode ? "yellow" : "#1976d2",
+                  }
                 }}
               >
                 Contact Me
               </Button>
             </Link>
+          </Box>
+          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: 'center' }}>
+            <ThemeToggle />
           </Box>
         </Toolbar>
       </Container>

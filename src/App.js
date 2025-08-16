@@ -1,11 +1,14 @@
 import HomeScreen from "./components/screen/HomeScreen";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <HomeScreen />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <HomeScreen />
+      </div>
+    </ThemeProvider>
   );
 }
 

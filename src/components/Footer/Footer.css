@@ -1,11 +1,22 @@
 .footer{
     width: 100vw;
     height:3rem;
-    background: rgb(40, 40, 40);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 300;
     font-size: small;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+/* Dark theme footer */
+.footer.dark-theme {
+    background: rgb(40, 40, 40);
+    color: white;
+}
+
+/* Light theme footer */
+.footer.light-theme {
+    background: rgb(220, 220, 220);
+    color: rgb(30, 30, 30);
 }

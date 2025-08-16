@@ -7,11 +7,23 @@
     position: relative;
 }
 
+/* Dark theme styles */
+#intro.dark-theme {
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+/* Light theme styles */
+#intro.light-theme {
+    background-color: #e0e0e0;
+    color: rgb(30, 30, 30);
+}
+
 .bg {
     position: absolute;
     top: 4rem;
     right: 0;
-    z-index: -1;
+    z-index: 1;
     object-fit: cover;
     height: 90vh;
     /* width: 40vw; */
@@ -26,6 +38,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 2;
     
 }
 
@@ -35,8 +49,9 @@
 }
 
 .introName {
-    color: yellow;
+    color: #FFD700;
     font-size: 5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .introPara {
@@ -45,17 +60,51 @@
 }
 
 .btn {
-    background: white;
     margin: 1rem 0;
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
     border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Dark theme button */
+.dark-btn {
+    background: white;
+    color: black;
+}
+
+.dark-btn:hover {
+    background: yellow;
+    transform: scale(1.05);
+}
+
+/* Light theme button */
+.light-btn {
+    background: rgb(30, 30, 30);
+    color: white;
+}
+
+.light-btn:hover {
+    background: #1976d2;
+    transform: scale(1.05);
 }
 
 .hire {
  object-fit: cover;
  margin: 0 0.25rem;
  height: 1rem;
+ filter: brightness(0) saturate(100%);
+}
+
+/* Dark theme - keep icon dark */
+.dark-theme .hire {
+ filter: brightness(0) saturate(100%);
+}
+
+/* Light theme - make icon white for better visibility on blue background */
+.light-theme .hire {
+ filter: brightness(0) saturate(100%) invert(1);
 }
 
 @media screen and (max-width: 860px) {

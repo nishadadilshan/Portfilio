@@ -4,12 +4,14 @@ import bg from "../../../assets/Dilshan_Crop.png";
 import hireme from "../../../assets/hireme.png";
 import { Link } from "react-scroll";
 import TextSwap from "../../Animations/SwapText";
+import { useTheme } from "../../../context/ThemeContext";
 
 const Intro = () => {
   const texts = ["Frontend Developer", "Full Stack Developer", "Cross-Platform Developer"];
+  const { isDarkMode } = useTheme();
 
   return (
-    <section id="intro">
+    <section id="intro" className={isDarkMode ? 'dark-theme' : 'light-theme'}>
       <div className="introContent">
         <span className="hello">Hello,</span>
         <span className="introText">
@@ -29,7 +31,7 @@ const Intro = () => {
           offset={-70}
           duration={500}
         >
-          <button className="btn">
+          <button className={`btn ${isDarkMode ? 'dark-btn' : 'light-btn'}`}>
             {" "}
             <img src={hireme} alt="hite me" className="hire" /> Hire me
           </button>

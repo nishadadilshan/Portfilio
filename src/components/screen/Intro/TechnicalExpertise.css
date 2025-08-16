@@ -1,0 +1,387 @@
+/* Combined Technical Expertise Section Styles */
+.technical-expertise-section {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.technical-expertise-section.dark-theme {
+    color: white;
+}
+
+.technical-expertise-section.light-theme {
+    color: rgb(30, 30, 30);
+}
+
+/* Floating animated dots */
+.technical-expertise-section::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    width: 6px;
+    height: 6px;
+    background: #FFD700;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: floatDot 5s ease-in-out infinite;
+    z-index: 1;
+}
+
+.technical-expertise-section::after {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    left: 15%;
+    width: 8px;
+    height: 8px;
+    background: #FFD700;
+    border-radius: 50%;
+    filter: blur(1.5px);
+    animation: floatDot 7s ease-in-out infinite reverse;
+    z-index: 1;
+}
+
+.expertise-container::before {
+    content: '';
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    filter: blur(0.5px);
+    animation: floatDot 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.expertise-container::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 5px;
+    height: 5px;
+    background: #FFD700;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: floatDot 8s ease-in-out infinite reverse;
+    z-index: 1;
+}
+
+@keyframes floatDot {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.6;
+    }
+    25% { 
+        transform: translateY(-15px) translateX(8px);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(-8px) translateX(-3px);
+        opacity: 0.8;
+    }
+    75% { 
+        transform: translateY(-12px) translateX(12px);
+        opacity: 0.9;
+    }
+}
+
+
+
+.expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Dark theme specific stats styles */
+.technical-expertise-section.dark-theme .stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.technical-expertise-section.dark-theme .stat-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Light theme specific stats styles */
+.technical-expertise-section.light-theme .stat-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.technical-expertise-section.light-theme .stat-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive stats */
+@media screen and (max-width: 768px) {
+    .technical-expertise-section {
+        padding: 3rem 1rem;
+    }
+    
+    .expertise-container {
+        padding: 0 1rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .expertise-container {
+        padding: 0 0.5rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Skills Preview Section Styles */
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skills-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.skills-header p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.skill-percentage {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* Dark theme specific skills styles */
+.technical-expertise-section.dark-theme .skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.technical-expertise-section.dark-theme .skill-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Light theme specific skills styles */
+.technical-expertise-section.light-theme .skill-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.technical-expertise-section.light-theme .skill-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.technical-expertise-section.light-theme .skill-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive skills */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        padding: 0 1rem;
+    }
+    
+    .skills-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .skills-header p {
+        font-size: 1rem;
+    }
+    
+    .skill-item {
+        padding: 1.2rem;
+    }
+    
+    .skill-name {
+        font-size: 1rem;
+    }
+    
+    .skill-percentage {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-container {
+        padding: 0 0.5rem;
+    }
+    
+    .skills-header h2 {
+        font-size: 2rem;
+    }
+    
+    .skills-header p {
+        font-size: 0.9rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .skill-name {
+        font-size: 0.9rem;
+    }
+    
+    .skill-percentage {
+        font-size: 0.8rem;
+    }
+    
+    .skill-bar {
+        height: 6px;
+    }
+}

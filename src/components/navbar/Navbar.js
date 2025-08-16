@@ -38,7 +38,7 @@ function Navbar() {
     <AppBar 
       position="sticky"
       sx={{
-        backgroundColor: isDarkMode ? 'rgba(0, 0, 0, 0.9)' : 'rgba(224, 224, 224, 0.9)',
+        backgroundColor: isDarkMode ? 'rgba(0, 0, 0, 0.95)' : 'rgba(180, 180, 180, 0.95)',
         backdropFilter: 'blur(10px)',
         boxShadow: isDarkMode ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.1)'
       }}
@@ -132,9 +132,10 @@ function Navbar() {
                     display: "block",
                     marginX: 2,
                     ":hover": {
-                      color: "yellow",
+                      color: "#FFD700",
                       paddingBottom: 0.5,
                       borderBottom: 3,
+                      borderBottomColor: "#FFD700",
                     },
                   }}
                 >

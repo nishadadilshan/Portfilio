@@ -235,6 +235,7 @@
 .dark-theme .msg {
     color: white;
     background: rgb(40, 40, 40);
+    border: 1px solid rgb(80, 80, 80);
 }
 
 /* Light theme form inputs */

@@ -1,4 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 import "./Portfolio.css";
 
 import Img1 from "../../../assets/img1.jpg";
@@ -17,36 +25,43 @@ import Portfolio1 from "../../../assets/img11.PNG";
 import Portfolio2 from "../../../assets/img12.PNG";
 
 function PortfolioScreen() {
-  const row1Ref = useRef(null);
-  const row2Ref = useRef(null);
-  const [currentIndex1, setCurrentIndex1] = useState(0);
-  const [currentIndex2, setCurrentIndex2] = useState(0);
-  const [currentIndex3, setCurrentIndex3] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Split images into three rows
-  const row1Images = [
-    { src: Img7, alt: "Img7" },
-    { src: Img1, alt: "Img1" },
-    { src: Img2, alt: "Img2" },
-    { src: Img3, alt: "Img3" },
-    { src: Img5, alt: "Img5" },
-    { src: Img6, alt: "Img6" },
-    { src: Img4, alt: "Img4" },
-  ];
-
-  const row2Images = [
-    { src: Img8, alt: "Img8" },
-    { src: Img9, alt: "Img9" },
-    { src: Img10, alt: "Img10" },
-    { src: Img11, alt: "Img11" },
-    { src: Img12, alt: "Img12" },
-  ];
-
-  const row3Images = [
-    { src: Portfolio1, alt: "Portfolio 1", isLandscape: true },
-    { src: Portfolio2, alt: "Portfolio 2", isLandscape: true },
-  ];
+  // Portfolio data with topics
+  const portfolioData = {
+    row1: {
+      topic: "Web Development Projects",
+      description: "Real-world mobile solutions from my corporate experience",
+      images: [
+        { src: Img7, alt: "Web Project 1" },
+        { src: Img1, alt: "Web Project 2" },
+        { src: Img2, alt: "Web Project 3" },
+        { src: Img3, alt: "Web Project 4" },
+        { src: Img5, alt: "Web Project 5" },
+        { src: Img6, alt: "Web Project 6" },
+        { src: Img4, alt: "Web Project 7" },
+      ]
+    },
+    row2: {
+      topic: "Mobile App Development",
+      description: "Personal mobile applications I've developed",
+      images: [
+        { src: Img8, alt: "Mobile App 1" },
+        { src: Img9, alt: "Mobile App 2" },
+        { src: Img10, alt: "Mobile App 3" },
+        { src: Img11, alt: "Mobile App 4" },
+        { src: Img12, alt: "Mobile App 5" },
+      ]
+    },
+    row3: {
+      topic: "Featured Projects",
+      description: "Real-world web applications from my professional experience",
+      images: [
+        { src: Portfolio1, alt: "Featured Project 1", isLandscape: true },
+        { src: Portfolio2, alt: "Featured Project 2", isLandscape: true },
+      ]
+    }
+  };
 
   // Check if mobile on mount and resize
   useEffect(() => {
@@ -60,27 +75,74 @@ function PortfolioScreen() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const scrollRow = (rowRef, direction) => {
-    if (rowRef.current) {
-      const scrollAmount = 300; // Adjust scroll amount as needed
-      const currentScroll = rowRef.current.scrollLeft;
-      const newScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
-        : currentScroll + scrollAmount;
-      
-      rowRef.current.scrollTo({
-        left: newScroll,
-        behavior: 'smooth'
-      });
+  // Swiper configuration for desktop (horizontal scrolling)
+  const desktopSwiperConfig = {
+    modules: [Navigation, Pagination, Autoplay],
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
     }
   };
 
-  const nextImage = (currentIndex, setCurrentIndex, imagesLength) => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesLength);
+  // Swiper configuration for mobile (single slide)
+  const mobileSwiperConfig = {
+    modules: [Navigation, Pagination, Autoplay, EffectFade],
+    spaceBetween: 0,
+    slidesPerView: 1,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
   };
 
-  const prevImage = (currentIndex, setCurrentIndex, imagesLength) => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + imagesLength) % imagesLength);
+  // Swiper configuration for landscape images (single slide)
+  const landscapeSwiperConfig = {
+    modules: [Navigation, Pagination, Autoplay, EffectFade],
+    spaceBetween: 0,
+    slidesPerView: 1,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
   };
 
   return (
@@ -93,127 +155,85 @@ function PortfolioScreen() {
         establish a robust online presence.
       </span>
       
-      {/* First Row - Horizontal Scrolling on Desktop, Carousel on Mobile */}
-      <div className="portfolio-row-container">
-        <button 
-          className="scroll-arrow left-arrow" 
-          onClick={() => isMobile 
-            ? prevImage(currentIndex1, setCurrentIndex1, row1Images.length)
-            : scrollRow(row1Ref, 'left')
-          }
-          aria-label={isMobile ? "Previous image" : "Scroll left"}
-        >
-          ‹
-        </button>
-        
-        <div className="portfolio-row" ref={row1Ref}>
-          {isMobile ? (
-            <div className="portfolio-item">
-              <img 
-                src={row1Images[currentIndex1].src} 
-                alt={row1Images[currentIndex1].alt} 
-                className={`workImg ${row1Images[currentIndex1].isLandscape ? 'landscape' : ''}`}
-              />
-            </div>
-          ) : (
-            row1Images.map((image, index) => (
-              <div key={index} className="portfolio-item">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`workImg ${image.isLandscape ? 'landscape' : ''}`}
-                />
-              </div>
-            ))
-          )}
+      {/* First Row - Web Development */}
+      <div className="portfolio-section">
+        <div className="portfolio-topic">
+          <p className="topic-description">{portfolioData.row1.description}</p>
         </div>
-        
-        <button 
-          className="scroll-arrow right-arrow" 
-          onClick={() => isMobile 
-            ? nextImage(currentIndex1, setCurrentIndex1, row1Images.length)
-            : scrollRow(row1Ref, 'right')
-          }
-          aria-label={isMobile ? "Next image" : "Scroll right"}
-        >
-          ›
-        </button>
+        <div className="portfolio-row-container">
+          <div className="swiper-button-prev"></div>
+          <Swiper 
+            {...(isMobile ? mobileSwiperConfig : desktopSwiperConfig)}
+            className="portfolio-swiper"
+          >
+            {portfolioData.row1.images.map((image, index) => (
+              <SwiperSlide key={index} className="portfolio-slide">
+                <div className="portfolio-item">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className={`workImg ${image.isLandscape ? 'landscape' : ''}`}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-button-next"></div>
+        </div>
       </div>
 
-      {/* Second Row - Horizontal Scrolling on Desktop, Carousel on Mobile */}
-      <div className="portfolio-row-container">
-        <button 
-          className="scroll-arrow left-arrow" 
-          onClick={() => isMobile 
-            ? prevImage(currentIndex2, setCurrentIndex2, row2Images.length)
-            : scrollRow(row2Ref, 'left')
-          }
-          aria-label={isMobile ? "Previous image" : "Scroll left"}
-        >
-          ‹
-        </button>
-        
-        <div className="portfolio-row" ref={row2Ref}>
-          {isMobile ? (
-            <div className="portfolio-item">
-              <img 
-                src={row2Images[currentIndex2].src} 
-                alt={row2Images[currentIndex2].alt} 
-                className={`workImg ${row2Images[currentIndex2].isLandscape ? 'landscape' : ''}`}
-              />
-            </div>
-          ) : (
-            row2Images.map((image, index) => (
-              <div key={index} className="portfolio-item">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`workImg ${image.isLandscape ? 'landscape' : ''}`}
-                />
-              </div>
-            ))
-          )}
+      {/* Second Row - Mobile Development */}
+      <div className="portfolio-section">
+        <div className="portfolio-topic">
+          <p className="topic-description">{portfolioData.row2.description}</p>
         </div>
-        
-        <button 
-          className="scroll-arrow right-arrow" 
-          onClick={() => isMobile 
-            ? nextImage(currentIndex2, setCurrentIndex2, row2Images.length)
-            : scrollRow(row2Ref, 'right')
-          }
-          aria-label={isMobile ? "Next image" : "Scroll right"}
-        >
-          ›
-        </button>
+        <div className="portfolio-row-container">
+          <div className="swiper-button-prev"></div>
+          <Swiper 
+            {...(isMobile ? mobileSwiperConfig : desktopSwiperConfig)}
+            className="portfolio-swiper"
+          >
+            {portfolioData.row2.images.map((image, index) => (
+              <SwiperSlide key={index} className="portfolio-slide">
+                <div className="portfolio-item">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className={`workImg ${image.isLandscape ? 'landscape' : ''}`}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-button-next"></div>
+        </div>
       </div>
 
-      {/* Third Row - Single Image Carousel */}
-      <div className="portfolio-row-container carousel-container">
-        <button 
-          className="scroll-arrow left-arrow" 
-          onClick={() => prevImage(currentIndex3, setCurrentIndex3, row3Images.length)}
-          aria-label="Previous image"
-        >
-          ‹
-        </button>
-        
-        <div className="portfolio-row carousel-row">
-          <div className="portfolio-item">
-            <img 
-              src={row3Images[currentIndex3].src} 
-              alt={row3Images[currentIndex3].alt} 
-              className={`workImg ${row3Images[currentIndex3].isLandscape ? 'landscape' : ''}`}
-            />
-          </div>
+      {/* Third Row - Featured Projects */}
+      <div className="portfolio-section">
+        <div className="portfolio-topic">
+          <p className="topic-description">{portfolioData.row3.description}</p>
         </div>
-        
-        <button 
-          className="scroll-arrow right-arrow" 
-          onClick={() => nextImage(currentIndex3, setCurrentIndex3, row3Images.length)}
-          aria-label="Next image"
-        >
-          ›
-        </button>
+        <div className="portfolio-row-container carousel-container">
+          <div className="swiper-button-prev"></div>
+          <Swiper 
+            {...landscapeSwiperConfig}
+            className="portfolio-swiper landscape-swiper"
+          >
+            {portfolioData.row3.images.map((image, index) => (
+              <SwiperSlide key={index} className="portfolio-slide">
+                <div className="portfolio-item">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className={`workImg ${image.isLandscape ? 'landscape' : ''}`}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-button-next"></div>
+        </div>
       </div>
     </section>
   );

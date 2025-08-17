@@ -131,6 +131,8 @@
     padding: 0 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 /* Portfolio Section */
@@ -368,6 +370,8 @@
     .worksDes {
         font-size: 16px;
         max-width: 100%;
+        text-align: justify;
+        line-height: 1.6;
     }
     
     .topic-description {
@@ -404,6 +408,8 @@
     .worksDes {
         font-size: 16px;
         max-width: 100%;
+        text-align: justify;
+        line-height: 1.6;
     }
     
     .topic-description {
@@ -443,6 +449,8 @@
         font-size: 14px;
         max-width: 100%;
         margin-bottom: 35px;
+        text-align: justify;
+        line-height: 1.6;
     }
     
     .portfolio-section {
@@ -519,6 +527,8 @@
         font-size: 14px;
         max-width: 100%;
         margin-bottom: 30px;
+        text-align: justify;
+        line-height: 1.6;
     }
     
     .portfolio-section {
@@ -597,6 +607,7 @@
         max-width: 100%;
         margin-bottom: 20px;
         line-height: 1.4;
+        text-align: justify;
     }
     
     .portfolio-section {
@@ -675,6 +686,8 @@
     .worksDes {
         font-size: 11px;
         max-width: 100%;
+        text-align: justify;
+        line-height: 1.4;
     }
     
     .portfolio-section {
@@ -752,6 +765,8 @@
     .worksDes {
         font-size: 11px;
         max-width: 100%;
+        text-align: justify;
+        line-height: 1.4;
     }
     
     .portfolio-section {

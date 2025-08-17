@@ -217,9 +217,9 @@
  filter: brightness(0) saturate(100%);
 }
 
-/* Light theme - keep icon dark for better visibility on gold background */
+/* Light theme - make icon white to match white text on dark background */
 .light-theme .hire {
- filter: brightness(0) saturate(100%);
+ filter: brightness(0) invert(1) saturate(100%);
 }
 
 

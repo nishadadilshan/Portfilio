@@ -10,13 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import "./Portfolio.css";
 
-import Img1 from "../../../assets/img1.jpg";
-import Img2 from "../../../assets/img2.jpg";
-import Img3 from "../../../assets/img3.jpg";
-import Img4 from "../../../assets/img4.jpg";
-import Img5 from "../../../assets/img5.jpg";
-import Img6 from "../../../assets/img6.jpg";
-import Img7 from "../../../assets/img7.PNG";
 import Img8 from "../../../assets/img8.PNG";
 import Img9 from "../../../assets/img9.jpg";
 import Img10 from "../../../assets/img10.jpg";
@@ -25,6 +18,23 @@ import Img12 from "../../../assets/img14.jpg";
 import Portfolio1 from "../../../assets/img11.PNG";
 import Portfolio2 from "../../../assets/img12.PNG";
 
+// Import SubClause images
+import SubClause1 from "../../../assets/mobileAppScreenshots/SubClause_1.jpg";
+import SubClause2 from "../../../assets/mobileAppScreenshots/SubClause_2.jpg";
+
+// Import MedicsAcademy images
+import MedicsAcademy1 from "../../../assets/mobileAppScreenshots/MedicsAcademy_1.jpg";
+import MedicsAcademy2 from "../../../assets/mobileAppScreenshots/MedicsAcademy_2.jpg";
+
+
+// Import NewSplitter images
+import NewSplitter1 from "../../../assets/mobileAppScreenshots/NewSplitter_1.jpg";
+import NewSplitter2 from "../../../assets/mobileAppScreenshots/NewSplitter_2.jpg";
+
+
+// Import Rapidex image
+import Rapidex1 from "../../../assets/mobileAppScreenshots/Rapidex_1.jpg";
+
 function PortfolioScreen() {
   const [isMobile, setIsMobile] = useState(false);
   const { isDarkMode } = useTheme();
@@ -32,16 +42,20 @@ function PortfolioScreen() {
   // Portfolio data with topics
   const portfolioData = {
     row1: {
-      topic: "Web Development Projects",
+      topic: "Mobile App Development Projects (Corporate)",
       description: "Real-world mobile solutions from my corporate experience",
       images: [
-        { src: Img7, alt: "Web Project 1" },
-        { src: Img1, alt: "Web Project 2" },
-        { src: Img2, alt: "Web Project 3" },
-        { src: Img3, alt: "Web Project 4" },
-        { src: Img5, alt: "Web Project 5" },
-        { src: Img6, alt: "Web Project 6" },
-        { src: Img4, alt: "Web Project 7" },
+        { src: NewSplitter1, alt: "NewSplitter Mobile App - Screen 1" },
+        { src: NewSplitter2, alt: "NewSplitter Mobile App - Screen 2" },
+
+        { src: SubClause1, alt: "SubClause Mobile App - Screen 1" },
+        { src: SubClause2, alt: "SubClause Mobile App - Screen 2" },
+
+        { src: Rapidex1, alt: "Rapidex Mobile App - Screen 1" },
+
+        { src: MedicsAcademy1, alt: "MedicsAcademy Mobile App - Screen 1" },
+        { src: MedicsAcademy2, alt: "MedicsAcademy Mobile App - Screen 2" },
+
       ]
     },
     row2: {

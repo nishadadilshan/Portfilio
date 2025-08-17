@@ -271,8 +271,9 @@ padding: 0 2rem;
 
     .skillDescription {
         padding: 0 0.5rem;
-        margin: 0 0.5rem;
+        margin: 0 1rem;
         font-size: 12px;
+        max-width: calc(100% - 2rem);
     }
 
     .skillBars {
@@ -307,8 +308,9 @@ padding: 0 2rem;
 
     .skillDescription {
         padding: 0 0.25rem;
-        margin: 0 0.25rem;
+        margin: 0 1.5rem;
         font-size: 11px;
+        max-width: calc(100% - 3rem);
     }
 
     .skillBars {

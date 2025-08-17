@@ -25,7 +25,7 @@ function AboutScreen() {
             <div className="skillBarText">
               <h2>Web Application Development</h2>
               <p>
-                I develop web applications using React, Node.js, and Spring
+                I develop web applications using React, Next.js, Node.js, and Spring
                 Boot, delivering robust and scalable solutions with a focus on
                 performance and user experience.
               </p>

@@ -388,10 +388,59 @@
 }
 
 /* Responsive skills */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
+    .technical-expertise-section {
+        padding: 3rem 1rem;
+    }
+    
+    .expertise-container {
+        padding: 0 1rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .skills-container {
+        padding: 0 1rem;
+    }
+    
+    .skills-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .skills-header p {
+        font-size: 14px;
+    }
+    
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .skill-item {
+        padding: 1.2rem;
+    }
+    
+    .skill-name {
+        font-size: 1rem;
+    }
+    
+    .skill-percentage {
+        font-size: 0.9rem;
     }
 }
 

@@ -259,7 +259,7 @@
     }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 768px) {
     #intro {
         flex-direction: column;
         padding: 1.5rem 1rem;
@@ -300,11 +300,9 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
-    
-
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
     #intro {
         padding: 1rem 0.5rem;
     }
@@ -342,7 +340,7 @@
     }
 }
 
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 360px) {
     .introName {
         font-size: 1.8rem;
     }

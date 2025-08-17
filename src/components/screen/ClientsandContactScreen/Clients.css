@@ -374,6 +374,14 @@
 
 
 @media screen and (max-width: 768px) {
+    .clientsDes,
+    .contactDes {
+        font-size: 14px;
+        padding: 0 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     .clientImgs {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 0.5rem;
@@ -396,6 +404,14 @@
 }
 
 @media screen and (max-width: 480px) {
+    .clientsDes,
+    .contactDes {
+        font-size: 12px;
+        padding: 0 0.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
     .clientImgs {
         grid-template-columns: repeat(1, 1fr);
         gap: 0.5rem;
@@ -418,6 +434,14 @@
 }
 
 @media screen and (max-width: 400px) {
+    .clientsDes,
+    .contactDes {
+        font-size: 11px;
+        padding: 0 0.25rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
     .link{
         object-fit: cover;
         height: 3rem;

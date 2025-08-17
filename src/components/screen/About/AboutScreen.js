@@ -12,14 +12,13 @@ function AboutScreen() {
     <section id="about" className={isDarkMode ? "dark-theme" : "light-theme"}>
       <span className="aboutTitle">What I do</span>
       <span className="skillDescription">
-        I am a versatile web and mobile app developer with extensive experience in
-        creating high-quality applications using React Native and Flutter. My
-        expertise extends to full-stack development, where I have a solid
-        foundation in both back-end development and web application development,
-        allowing me to deliver end-to-end solutions. Additionally, I have a
-        strong background in UI/UX design, which enables me to craft visually
-        appealing and user-friendly interfaces that enhance the overall user
-        experience.{" "}
+        I design and develop modern web and mobile applications that are fast,
+        reliable, and user-friendly. Using technologies like React, Next.js,
+        React Native, and Flutter, I build cross-platform solutions that work
+        seamlessly across devices. With experience in both frontend and backend
+        development, I can deliver complete end-to-end products. I also focus on
+        UI/UX design, creating clean and intuitive interfaces that give users
+        the best possible experience.{" "}
         <div className="skillBars">
           <div className="skillBar">
             <img src={WebDesign} alt="WebDesign" className="skillBarImg" />

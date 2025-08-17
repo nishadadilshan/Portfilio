@@ -531,7 +531,7 @@
     }
     
     .topic-description {
-        font-size: 1.1rem;
+        font-size: 14px;
         max-width: 800px;
     }
     
@@ -593,7 +593,7 @@
     }
     
     .worksDes {
-        font-size: 13px;
+        font-size: 12px;
         max-width: 100%;
         margin-bottom: 20px;
         line-height: 1.4;
@@ -609,7 +609,7 @@
     }
     
     .topic-description {
-        font-size: 1rem;
+        font-size: 12px;
         max-width: 100%;
         line-height: 1.4;
     }
@@ -673,7 +673,7 @@
     }
     
     .worksDes {
-        font-size: 12px;
+        font-size: 11px;
         max-width: 100%;
     }
     
@@ -687,7 +687,7 @@
     }
     
     .topic-description {
-        font-size: 0.9rem;
+        font-size: 11px;
         max-width: 100%;
     }
     

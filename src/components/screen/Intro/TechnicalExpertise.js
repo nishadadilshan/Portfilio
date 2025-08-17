@@ -5,18 +5,22 @@ import { useTheme } from "../../../context/ThemeContext";
 const TechnicalExpertise = () => {
   const { isDarkMode } = useTheme();
   const [counts, setCounts] = useState({ projects: 0, experience: 0, clients: 0 });
+  const [showAllSkills, setShowAllSkills] = useState(false);
   const [skillPercentages, setSkillPercentages] = useState({
     react: 0,
+    nextjs: 0,
     reactNative: 0,
     typescript: 0,
     javascript: 0,
     nodejs: 0,
+    flutter: 0,
     java: 0,
     springBoot: 0,
     html: 0,
     css: 0,
     git: 0,
     firebase: 0,
+    databases: 0,
     cicd: 0,
     agile: 0,
     cloud: 0,
@@ -35,6 +39,11 @@ const TechnicalExpertise = () => {
       afterElement.style.setProperty('--mouse-x', `${x}px`);
       afterElement.style.setProperty('--mouse-y', `${y}px`);
     }
+  };
+
+  // Toggle show all skills
+  const toggleShowAllSkills = () => {
+    setShowAllSkills(!showAllSkills);
   };
 
   useEffect(() => {
@@ -71,16 +80,19 @@ const TechnicalExpertise = () => {
   useEffect(() => {
     const targetSkills = { 
       react: 80, 
+      nextjs: 60, 
       reactNative: 80, 
       typescript: 85, 
       javascript: 85, 
       nodejs: 75, 
+      flutter: 60, 
       java: 60, 
       springBoot: 60, 
       html: 85, 
       css: 80, 
       git: 80, 
       firebase: 75,
+      databases: 75,
       cicd: 60,
       agile: 75,
       cloud: 70,
@@ -141,6 +153,7 @@ const TechnicalExpertise = () => {
             <p>Here are some of the technologies I work with</p>
           </div>
           <div className="skills-grid">
+            {/* First 5 skills - always visible */}
             <div className="skill-item">
               <div className="skill-info">
                 <span className="skill-name">React.js</span>
@@ -150,6 +163,18 @@ const TechnicalExpertise = () => {
                 <div 
                   className="skill-progress" 
                   style={{ width: `${skillPercentages.react}%` }}
+                ></div>
+              </div>
+            </div>
+            <div className="skill-item">
+              <div className="skill-info">
+                <span className="skill-name">Next.js</span>
+                <span className="skill-percentage">{skillPercentages.nextjs}%</span>
+              </div>
+              <div className="skill-bar">
+                <div 
+                  className="skill-progress" 
+                  style={{ width: `${skillPercentages.nextjs}%` }}
                 ></div>
               </div>
             </div>
@@ -189,7 +214,9 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+
+            {/* Remaining skills - hidden on mobile unless showAllSkills is true */}
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Node.js</span>
                 <span className="skill-percentage">{skillPercentages.nodejs}%</span>
@@ -201,7 +228,19 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
+              <div className="skill-info">
+                <span className="skill-name">Flutter</span>
+                <span className="skill-percentage">{skillPercentages.flutter}%</span>
+              </div>
+              <div className="skill-bar">
+                <div 
+                  className="skill-progress" 
+                  style={{ width: `${skillPercentages.flutter}%` }}
+                ></div>
+              </div>
+            </div>
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Java</span>
                 <span className="skill-percentage">{skillPercentages.java}%</span>
@@ -213,7 +252,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Spring Boot</span>
                 <span className="skill-percentage">{skillPercentages.springBoot}%</span>
@@ -225,7 +264,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">HTML5</span>
                 <span className="skill-percentage">{skillPercentages.html}%</span>
@@ -237,7 +276,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">CSS/SCSS</span>
                 <span className="skill-percentage">{skillPercentages.css}%</span>
@@ -249,7 +288,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Git/GitHub</span>
                 <span className="skill-percentage">{skillPercentages.git}%</span>
@@ -261,7 +300,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Firebase</span>
                 <span className="skill-percentage">{skillPercentages.firebase}%</span>
@@ -273,7 +312,19 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
+              <div className="skill-info">
+                <span className="skill-name">SQL & NoSQL</span>
+                <span className="skill-percentage">{skillPercentages.databases}%</span>
+              </div>
+              <div className="skill-bar">
+                <div 
+                  className="skill-progress" 
+                  style={{ width: `${skillPercentages.databases}%` }}
+                ></div>
+              </div>
+            </div>
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">CI/CD</span>
                 <span className="skill-percentage">{skillPercentages.cicd}%</span>
@@ -285,7 +336,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Agile</span>
                 <span className="skill-percentage">{skillPercentages.agile}%</span>
@@ -297,7 +348,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Cloud</span>
                 <span className="skill-percentage">{skillPercentages.cloud}%</span>
@@ -309,7 +360,7 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
-            <div className="skill-item">
+            <div className={`skill-item mobile-hidden ${showAllSkills ? 'show' : ''}`}>
               <div className="skill-info">
                 <span className="skill-name">Testing</span>
                 <span className="skill-percentage">{skillPercentages.testing}%</span>
@@ -321,6 +372,16 @@ const TechnicalExpertise = () => {
                 ></div>
               </div>
             </div>
+          </div>
+
+          {/* See More/Less Button - only visible on mobile */}
+          <div className="see-more-container">
+            <button 
+              className="see-more-btn"
+              onClick={toggleShowAllSkills}
+            >
+              {showAllSkills ? 'See Less' : 'See More'}
+            </button>
           </div>
         </div>
       </div>

@@ -434,3 +434,92 @@
         height: 6px;
     }
 }
+
+/* Mobile See More/Less functionality */
+.mobile-hidden {
+    display: block; /* Show all skills by default on desktop */
+}
+
+.mobile-hidden.show {
+    display: block;
+}
+
+.see-more-container {
+    text-align: center;
+    margin-top: 2rem;
+    display: none; /* Hidden by default on desktop */
+}
+
+.see-more-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.see-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+.see-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Dark theme button styles */
+.technical-expertise-section.dark-theme .see-more-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.technical-expertise-section.dark-theme .see-more-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Light theme button styles */
+.technical-expertise-section.light-theme .see-more-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.technical-expertise-section.light-theme .see-more-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Mobile responsive styles for see more functionality */
+@media screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important; /* Hide skills beyond first 5 on mobile */
+    }
+    
+    .mobile-hidden.show {
+        display: block !important; /* Show hidden skills when "See More" is clicked */
+    }
+    
+    .see-more-container {
+        display: block; /* Show the "See More" button on mobile */
+    }
+    
+    .see-more-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .see-more-btn {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+}

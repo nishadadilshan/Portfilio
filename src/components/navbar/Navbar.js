@@ -9,17 +9,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
+import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
+import WorkIcon from "@mui/icons-material/Work";
+import PeopleIcon from "@mui/icons-material/People";
 import { Link } from "react-scroll";
 import { useTheme } from "../../context/ThemeContext";
 import ThemeToggle from "../ThemeToggle";
 import logo from "../../assets/logo.png";
 
 const pages = [
-  { name: "Home", to: "intro" },
-  { name: "About", to: "about" },
-  { name: "Portfolio", to: "works" },
-  { name: "Clients", to: "clientsandContact" }
+  { name: "Home", to: "intro", icon: <HomeIcon sx={{ fontSize: 20 }} /> },
+  { name: "About", to: "about", icon: <PersonIcon sx={{ fontSize: 20 }} /> },
+  { name: "Portfolio", to: "works", icon: <WorkIcon sx={{ fontSize: 20 }} /> },
+  { name: "Clients", to: "clientsandContact", icon: <PeopleIcon sx={{ fontSize: 20 }} /> }
 ];
 
 function Navbar() {
@@ -130,7 +134,10 @@ function Navbar() {
                     duration={500}
                     style={{ textDecoration: "none", color: "inherit", width: '100%' }}
                   >
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1, width: '100%' }}>
+                      {page.icon}
+                      <Typography textAlign="left">{page.name}</Typography>
+                    </Box>
                   </Link>
                 </MenuItem>
               ))}
@@ -146,9 +153,9 @@ function Navbar() {
                   duration={500}
                   style={{ textDecoration: "none", color: "inherit", width: '100%' }}
                 >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <ChatBubbleOutlineIcon sx={{ fontSize: 20 }} />
-                    <Typography textAlign="center">Contact Me</Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1, width: '100%' }}>
+                    <ChatBubbleIcon sx={{ fontSize: 20 }} />
+                    <Typography textAlign="left">Contact Me</Typography>
                   </Box>
                 </Link>
               </MenuItem>
@@ -225,7 +232,7 @@ function Navbar() {
               <Button
                 variant="contained"
                 size="small"
-                startIcon={<ChatBubbleOutlineIcon />}
+                startIcon={<ChatBubbleIcon />}
                 sx={{
                   color: isDarkMode ? "rgb(30, 30, 30)" : "white",
                   borderRadius: 15,

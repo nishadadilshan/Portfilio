@@ -22,17 +22,6 @@ function AboutScreen() {
         experience.{" "}
         <div className="skillBars">
           <div className="skillBar">
-            <img src={AppDesign} alt="AppDesign" className="skillBarImg" />
-            <div className="skillBarText">
-              <h2>Mobile Application Development</h2>
-              <p>
-                I develop cross-platform mobile applications using React Native
-                and Flutter, creating efficient and user-friendly experiences on
-                both iOS and Android.
-              </p>
-            </div>
-          </div>
-          <div className="skillBar">
             <img src={WebDesign} alt="WebDesign" className="skillBarImg" />
             <div className="skillBarText">
               <h2>Web Application Development</h2>
@@ -40,6 +29,17 @@ function AboutScreen() {
                 I develop web applications using React, Node.js, and Spring
                 Boot, delivering robust and scalable solutions with a focus on
                 performance and user experience.
+              </p>
+            </div>
+          </div>
+          <div className="skillBar">
+            <img src={AppDesign} alt="AppDesign" className="skillBarImg" />
+            <div className="skillBarText">
+              <h2>Mobile Application Development</h2>
+              <p>
+                I develop cross-platform mobile applications using React Native
+                and Flutter, creating efficient and user-friendly experiences on
+                both iOS and Android.
               </p>
             </div>
           </div>

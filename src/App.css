@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 /* Theme transition for specific elements only */
@@ -24,6 +25,7 @@ body.dark-theme {
     overflow-y: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
     padding-top: 64px; /* Account for fixed navbar */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 /* Light theme styles */
@@ -34,6 +36,7 @@ body.light-theme {
     overflow-y: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
     padding-top: 64px; /* Account for fixed navbar */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 /* App container theme styles */
@@ -121,12 +124,21 @@ button, a, .btn, .stat-item, .skill-item {
         overflow-x: hidden;
         width: 100%;
         padding-top: 56px; /* Smaller padding for mobile navbar */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+        position: relative; /* Ensure proper positioning context */
     }
     
     /* Ensure all containers respect viewport */
     .App {
         width: 100%;
         overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    /* Prevent any potential scroll blocking on mobile */
+    * {
+        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
     }
 }
 

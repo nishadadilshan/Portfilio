@@ -35,6 +35,11 @@ import NewSplitter2 from "../../../assets/mobileAppScreenshots/NewSplitter_2.jpg
 // Import Rapidex image
 import Rapidex1 from "../../../assets/mobileAppScreenshots/Rapidex_1.jpg";
 
+// Import PersonalProject images
+import PersonalProject1 from "../../../assets/PersonalProjectScreenShots/PersonalProject_1.jpg";
+import PersonalProject2 from "../../../assets/PersonalProjectScreenShots/PersonalProject_2.jpg";
+import PersonalProject3 from "../../../assets/PersonalProjectScreenShots/PersonalProject_3.jpg";
+
 function PortfolioScreen() {
   const [isMobile, setIsMobile] = useState(false);
   const { isDarkMode } = useTheme();
@@ -59,14 +64,13 @@ function PortfolioScreen() {
       ]
     },
     row2: {
-      topic: "Mobile App Development",
+      topic: "Mobile App Development (Personal)",
       description: "Personal mobile applications I've developed",
       images: [
-        { src: Img8, alt: "Mobile App 1" },
-        { src: Img9, alt: "Mobile App 2" },
-        { src: Img10, alt: "Mobile App 3" },
-        { src: Img11, alt: "Mobile App 4" },
-        { src: Img12, alt: "Mobile App 5" },
+        { src: PersonalProject1, alt: "Personal Project 1" },
+        { src: PersonalProject2, alt: "Personal Project 2" },
+        { src: PersonalProject3, alt: "Personal Project 3" },
+
       ]
     },
     row3: {

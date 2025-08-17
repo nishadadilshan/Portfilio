@@ -93,6 +93,13 @@ function Navbar() {
                 '& .MuiPaper-root': {
                   backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff',
                   color: isDarkMode ? '#ffffff' : '#000000',
+                  minWidth: '200px',
+                  maxWidth: '90vw',
+                  marginTop: '8px',
+                },
+                '& .MuiMenuItem-root': {
+                  padding: '12px 16px',
+                  fontSize: '1rem',
                 }
               }}
             >

@@ -22,6 +22,16 @@ padding: 0 2rem;
     color: rgb(30, 30, 30);
 }
 
+/* Light theme dot styles - make dots more visible */
+.light-theme #about::before,
+.light-theme #about::after,
+.light-theme .aboutTitle::before,
+.light-theme .skillBars::after {
+    background: #FF8C00 !important; /* Darker orange for better visibility */
+    filter: blur(0.5px) !important;
+    opacity: 0.9 !important;
+}
+
 /* Floating animated dots */
 #about::before {
     content: '';

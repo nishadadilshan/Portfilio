@@ -25,6 +25,16 @@
     position: relative;
 }
 
+/* Light theme dot styles - make dots more visible */
+.light-theme #intro::before,
+.light-theme #intro::after,
+.light-theme .introContent::before,
+.light-theme .introContent::after {
+    background: #FF8C00 !important; /* Darker orange for better visibility */
+    filter: blur(0.5px) !important;
+    opacity: 0.9 !important;
+}
+
 /* Floating animated dots */
 #intro::before {
     content: '';

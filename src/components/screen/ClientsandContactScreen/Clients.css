@@ -15,11 +15,23 @@
 /* Dark theme styles */
 #clientsandContact.dark-theme {
     color: white;
+    background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgb(18, 18, 15) 50%, rgb(30, 28, 20) 100%);
 }
 
 /* Light theme styles */
 #clientsandContact.light-theme {
     color: rgb(30, 30, 30);
+    background: linear-gradient(90deg, #ffffff 0%, #fffdf0 50%, #fef7d8 100%);
+}
+
+/* Light theme dot styles - make dots more visible */
+.light-theme #clientsandContact::before,
+.light-theme #clientsandContact::after,
+.light-theme .clients::before,
+.light-theme .contact::after {
+    background: #FF8C00 !important; /* Darker orange for better visibility */
+    filter: blur(0.5px) !important;
+    opacity: 0.9 !important;
 }
 
 /* Floating animated dots */

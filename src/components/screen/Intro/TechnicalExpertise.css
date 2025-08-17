@@ -13,6 +13,16 @@
     color: rgb(30, 30, 30);
 }
 
+/* Light theme dot styles - make dots more visible */
+.light-theme .technical-expertise-section::before,
+.light-theme .technical-expertise-section::after,
+.light-theme .expertise-container::before,
+.light-theme .expertise-container::after {
+    background: #FF8C00 !important; /* Darker orange for better visibility */
+    filter: blur(0.5px) !important;
+    opacity: 0.9 !important;
+}
+
 /* Floating animated dots */
 .technical-expertise-section::before {
     content: '';

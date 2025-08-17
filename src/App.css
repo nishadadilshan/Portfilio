@@ -18,7 +18,7 @@ body, div, section, article, aside, header, footer, nav, main {
 
 /* Dark theme styles */
 body.dark-theme {
-    background: linear-gradient(135deg, rgb(25, 25, 25) 0%, rgb(45, 45, 45) 100%);
+    background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgb(18, 18, 15) 50%, rgb(30, 28, 20) 100%);
     color: white;
     overflow-x: hidden;
     overflow-y: auto;
@@ -27,7 +27,7 @@ body.dark-theme {
 
 /* Light theme styles */
 body.light-theme {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #fffdf0 50%, #fef7d8 100%);
     color: rgb(30, 30, 30);
     overflow-x: hidden;
     overflow-y: auto;
@@ -41,14 +41,16 @@ body.light-theme {
 }
 
 .dark-theme .App {
-    background: linear-gradient(135deg, rgb(25, 25, 25) 0%, rgb(45, 45, 45) 100%);
+    background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgb(18, 18, 15) 50%, rgb(30, 28, 20) 100%);
     color: white;
 }
 
 .light-theme .App {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #fffdf0 50%, #fef7d8 100%);
     color: rgb(30, 30, 30);
 }
+
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

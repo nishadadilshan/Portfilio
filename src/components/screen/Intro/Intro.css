@@ -158,6 +158,24 @@
     background-clip: text;
 }
 
+/* Dark theme specific styling for the name */
+.dark-theme .introName {
+    background: linear-gradient(90deg, #fff89b, #ffc400); /* Brighter gold to orange gradient for dark theme */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Light theme specific styling for the name */
+.light-theme .introName {
+    background: linear-gradient(45deg, #ffc400, #493400); /* Darker gold gradient for better contrast */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .introPara {
     font-size: 1.1rem;
     font-weight: 400;

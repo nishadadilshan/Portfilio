@@ -39,6 +39,8 @@ import Rapidex1 from "../../../assets/mobileAppScreenshots/Rapidex_1.jpg";
 import PersonalProject1 from "../../../assets/PersonalProjectScreenShots/PersonalProject_1.jpg";
 import PersonalProject2 from "../../../assets/PersonalProjectScreenShots/PersonalProject_2.jpg";
 import PersonalProject3 from "../../../assets/PersonalProjectScreenShots/PersonalProject_3.jpg";
+import PersonalProject4 from "../../../assets/PersonalProjectScreenShots/PersonalProject_4.png";
+import PersonalProject5 from "../../../assets/PersonalProjectScreenShots/PersonalProject_5.png";
 
 function PortfolioScreen() {
   const [isMobile, setIsMobile] = useState(false);
@@ -70,6 +72,8 @@ function PortfolioScreen() {
         { src: PersonalProject1, alt: "Personal Project 1" },
         { src: PersonalProject2, alt: "Personal Project 2" },
         { src: PersonalProject3, alt: "Personal Project 3" },
+        { src: PersonalProject4, alt: "Personal Project 4" },
+        { src: PersonalProject5, alt: "Personal Project 5" },
 
       ]
     },

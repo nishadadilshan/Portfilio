@@ -12,6 +12,22 @@
     position: relative;
 }
 
+/* CSS Custom Properties for fluid typography */
+:root {
+    /* Base font sizes that scale with viewport */
+    --title-font-size: clamp(1.8rem, 4vw + 0.5rem, 3.5rem);
+    --description-font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.125rem);
+    --topic-font-size: clamp(1rem, 1.8vw + 0.5rem, 1.4rem);
+    
+    /* Responsive spacing */
+    --section-spacing: clamp(1.5rem, 3vw + 1rem, 3rem);
+    --item-spacing: clamp(0.5rem, 1.5vw + 0.5rem, 2rem);
+    
+    /* Responsive image sizes */
+    --image-height: clamp(40vh, 60vw, 65vh);
+    --image-max-width: clamp(200px, 25vw, 350px);
+}
+
 /* Dark theme styles */
 #works.dark-theme {
     color: white;
@@ -110,22 +126,20 @@
     }
 }
 
-
-
 .worksTitle{
-    font-size: 3rem;
+    font-size: var(--title-font-size);
     font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: var(--section-spacing);
+    margin-bottom: var(--section-spacing);
     position: relative;
     z-index: 2;
 }
 
 .worksDes{
-    font-size: 18px;
+    font-size: var(--description-font-size);
     font-weight: 400;
     max-width: 100vw;
-    margin-bottom: 50px;
+    margin-bottom: var(--section-spacing);
     position: relative;
     z-index: 2;
     padding: 0 2rem;
@@ -138,7 +152,7 @@
 /* Portfolio Section */
 .portfolio-section {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: var(--section-spacing);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,7 +161,7 @@
 /* Portfolio Topic */
 .portfolio-topic {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--section-spacing);
     max-width: 100%;
     padding: 0 2rem;
     margin-left: 2rem;
@@ -155,7 +169,7 @@
 }
 
 .topic-description {
-    font-size: 1.3rem;
+    font-size: var(--topic-font-size);
     color: #666;
     font-weight: 400;
     line-height: 1.6;
@@ -173,10 +187,10 @@
     position: relative;
     width: 100%;
     max-width: 100vw;
-    margin: 20px 0;
+    margin: var(--item-spacing) 0;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: var(--item-spacing);
     padding: 0 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -186,7 +200,7 @@
 .portfolio-row-container.carousel-container {
     max-width: 100vw;
     width: 100vw;
-    margin: 20px auto;
+    margin: var(--item-spacing) auto;
     padding: 0 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -209,7 +223,7 @@
 .portfolio-item {
     flex-shrink: 0;
     transition: transform 0.3s ease-in-out;
-    min-width: 300px;
+    min-width: clamp(200px, 20vw, 300px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,9 +240,9 @@
     color: white;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    width: clamp(30px, 4vw + 20px, 50px);
+    height: clamp(30px, 4vw + 20px, 50px);
+    font-size: clamp(14px, 1.5vw + 8px, 24px);
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -254,7 +268,7 @@
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 20px;
+    font-size: clamp(12px, 1.2vw + 6px, 20px);
     font-weight: bold;
 }
 
@@ -285,7 +299,7 @@
 /* Swiper Pagination */
 .swiper-pagination {
     position: relative;
-    margin-top: 20px;
+    margin-top: var(--item-spacing);
 }
 
 .swiper-pagination-bullet {
@@ -310,8 +324,8 @@
 
 .workImg{
     object-fit: cover;
-    height: 60vh;
-    max-width: 300px;
+    height: var(--image-height);
+    max-width: var(--image-max-width);
     transition: all 0.3s ease-in-out;
     opacity: 1;
     transform: scale(1);
@@ -355,28 +369,12 @@
     object-fit: contain;
 }
 
-/* Responsive design */
-/* Large Desktop */
+/* Responsive design - simplified with fluid typography */
+/* Large Desktop - only for very large screens */
 @media (min-width: 1400px) {
     #works {
         max-width: 100%;
         padding: 0 2rem;
-    }
-    
-    .worksTitle {
-        font-size: 3.5rem;
-    }
-    
-    .worksDes {
-        font-size: 18px;
-        max-width: 100%;
-        text-align: justify;
-        line-height: 1.6;
-    }
-    
-    .topic-description {
-        font-size: 1.4rem;
-        max-width: 800px;
     }
     
     .portfolio-row-container {
@@ -384,453 +382,33 @@
         gap: 30px;
     }
     
-    .workImg {
-        height: 65vh;
-        max-width: 350px;
-    }
-    
     .workImg.landscape {
         height: 85vh;
     }
 }
 
-/* Desktop */
-@media (max-width: 1399px) and (min-width: 1024px) {
-    #works {
-        max-width: 100%;
-        padding: 0 1.5rem;
-    }
-    
-    .worksTitle {
-        font-size: 3rem;
-    }
-    
-    .worksDes {
-        font-size: 18px;
-        max-width: 100%;
-        text-align: justify;
-        line-height: 1.6;
-    }
-    
-    .topic-description {
-        font-size: 1.3rem;
-        max-width: 800px;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 25px;
-    }
-    
-    .workImg {
-        height: 60vh;
-        max-width: 320px;
-    }
-    
-    .workImg.landscape {
-        height: 80vh;
-    }
-}
-
-/* Tablet Landscape */
-@media (max-width: 1023px) and (min-width: 769px) {
-    #works {
-        max-width: 100%;
-        padding: 0 1rem;
-    }
-    
-    .worksTitle {
-        font-size: 2.8rem;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .worksDes {
-        font-size: 14px;
-        max-width: 100%;
-        margin-bottom: 35px;
-        text-align: justify;
-        line-height: 1.6;
-    }
-    
-    .portfolio-section {
-        margin-bottom: 45px;
-    }
-    
-    .portfolio-topic {
-        margin-bottom: 25px;
-        max-width: 100%;
-    }
-    
-    .topic-description {
-        font-size: 1.3rem;
-        max-width: 800px;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 20px;
-        margin: 20px 0;
-    }
-    
-    .portfolio-row-container.carousel-container {
-        max-width: 100%;
-        width: 100%;
-        margin: 20px auto;
-    }
-    
-    .portfolio-item {
-        min-width: 280px;
-    }
-    
-    .workImg {
-        height: 55vh;
-        max-width: 280px;
-    }
-    
-    .workImg.landscape {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        max-height: 75vh;
-        object-fit: contain;
-        box-shadow: none;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-    }
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 18px;
-    }
-}
-
-/* Tablet Portrait */
-@media (max-width: 768px) {
-    #works {
-        max-width: 100%;
-        padding: 0 0.5rem;
-    }
-    
-    .worksTitle {
-        font-size: 2.5rem;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .worksDes {
-        font-size: 14px;
-        max-width: 100%;
-        margin-bottom: 30px;
-        text-align: justify;
-        line-height: 1.6;
-    }
-    
-    .portfolio-section {
-        margin-bottom: 40px;
-    }
-    
-    .portfolio-topic {
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-    
-    .topic-description {
-        font-size: 1.3rem;
-        max-width: 800px;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 15px;
-        margin: 15px 0;
-    }
-    
-    .portfolio-row-container.carousel-container {
-        max-width: 100%;
-        width: 100%;
-        margin: 15px auto;
-    }
-    
-    .portfolio-item {
-        min-width: 250px;
-    }
-    
-    .workImg {
-        height: 50vh;
-        max-width: 250px;
-    }
-    
-    .workImg.landscape {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        max-height: 70vh;
-        object-fit: contain;
-        box-shadow: none;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 16px;
-    }
-}
-
-/* Large Mobile */
+/* Hide default Swiper navigation arrows on mobile for better UX */
 @media (max-width: 480px) {
-    #works {
-        max-width: 100%;
-        padding: 0 0.5rem;
-        min-height: calc(100vh - 2rem);
-    }
-    
-    .worksTitle {
-        font-size: 2rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .worksDes {
-        font-size: 12px;
-        max-width: calc(100% - 2rem);
-        margin-bottom: 20px;
-        line-height: 1.4;
-        text-align: justify;
-        padding: 0 0.5rem;
-        margin: 0 1rem;
-    }
-    
-    .portfolio-section {
-        margin-bottom: 30px;
-    }
-    
-    .portfolio-topic {
-        margin-bottom: 15px;
-        max-width: 100%;
-    }
-    
-    .topic-description {
-        font-size: 1.5rem;
-        max-width: 100%;
-        line-height: 1.4;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 8px;
-        margin: 10px 0;
-    }
-    
-    .portfolio-row-container.carousel-container {
-        max-width: 100%;
-        width: 100%;
-        margin: 10px auto;
-    }
-    
-    .portfolio-item {
-        min-width: 220px;
-    }
-    
-    .workImg {
-        height: 50vh;
-        max-width: 100%;
-        border-radius: 6px;
-        object-fit: cover;
-        box-shadow: none;
-    }
-    
-    .workImg.landscape {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        max-height: 50vh;
-        border-radius: 6px;
-        box-shadow: none;
-        object-fit: contain;
-    }
-    
     .swiper-button-next,
     .swiper-button-prev {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+        display: none;
     }
     
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 14px;
+    /* Show pagination instead */
+    .swiper-pagination {
+        display: block;
     }
 }
 
-/* Medium Mobile */
-@media (max-width: 360px) {
-    #works {
-        max-width: 100%;
-        padding: 0 0.25rem;
+/* Custom fade effect for mobile */
+@media (max-width: 480px) {
+    .portfolio-swiper .swiper-slide {
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
     
-    .worksTitle {
-        font-size: 1.8rem;
-    }
-    
-    .worksDes {
-        font-size: 11px;
-        max-width: calc(100% - 3rem);
-        text-align: justify;
-        line-height: 1.4;
-        padding: 0 0.25rem;
-        margin: 0 1.5rem;
-    }
-    
-    .portfolio-section {
-        margin-bottom: 25px;
-    }
-    
-    .portfolio-topic {
-        margin-bottom: 12px;
-        max-width: 100%;
-    }
-    
-    .topic-description {
-        font-size: 1.3rem;
-        max-width: 100%;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 5px;
-        margin: 8px 0;
-    }
-    
-    .portfolio-row-container.carousel-container {
-        max-width: 100%;
-        width: 100%;
-        margin: 8px auto;
-    }
-    
-    .portfolio-item {
-        min-width: 200px;
-    }
-    
-    .workImg {
-        height: 60vh;
-        max-width: 240px;
-        border-radius: 4px;
-        object-fit: cover;
-        box-shadow: none;
-    }
-    
-    .workImg.landscape {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        max-height: 60vh;
-        border-radius: 4px;
-        box-shadow: none;
-        object-fit: contain;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 12px;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 320px) {
-    #works {
-        max-width: 100%;
-        padding: 0 0.25rem;
-    }
-    
-    .worksTitle {
-        font-size: 1.6rem;
-    }
-    
-    .worksDes {
-        font-size: 11px;
-        max-width: calc(100% - 3rem);
-        text-align: justify;
-        line-height: 1.4;
-        padding: 0 0.25rem;
-        margin: 0 1.5rem;
-    }
-    
-    .portfolio-section {
-        margin-bottom: 20px;
-    }
-    
-    .portfolio-topic {
-        margin-bottom: 10px;
-        max-width: 100%;
-    }
-    
-    .topic-description {
-        font-size: 0.85rem;
-        max-width: 100%;
-    }
-    
-    .portfolio-row-container {
-        max-width: 100%;
-        gap: 3px;
-        margin: 6px 0;
-    }
-    
-    .portfolio-row-container.carousel-container {
-        max-width: 100%;
-        width: 100%;
-        margin: 6px auto;
-    }
-    
-    .portfolio-item {
-        min-width: 180px;
-    }
-    
-    .workImg {
-        height: 55vh;
-        max-width: 220px;
-        border-radius: 3px;
-        object-fit: cover;
-    }
-    
-    .workImg.landscape {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        max-height: 55vh;
-        border-radius: 3px;
-        object-fit: contain;
-    }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
-    }
-    
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 11px;
+    .portfolio-swiper .swiper-slide-active {
+        opacity: 1;
     }
 }
 
@@ -860,30 +438,5 @@
 /* Ensure consistent transition timing for all images */
 .workImg {
     transition: all 0.3s ease-in-out !important;
-}
-
-/* Hide default Swiper navigation arrows on mobile for better UX */
-@media (max-width: 480px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
-    }
-    
-    /* Show pagination instead */
-    .swiper-pagination {
-        display: block;
-    }
-}
-
-/* Custom fade effect for mobile */
-@media (max-width: 480px) {
-    .portfolio-swiper .swiper-slide {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .portfolio-swiper .swiper-slide-active {
-        opacity: 1;
-    }
 }
 

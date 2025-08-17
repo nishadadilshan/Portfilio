@@ -1,32 +1,33 @@
 .text-swap {
-    font-size: 3rem;
+    font-size: var(--title-font-size);
     transition: opacity 0.5s ease-in-out;
     margin-bottom: 10px;
-  }
-  
-  .fade-in {
-    opacity: 1;
-  }
-  
-  .fade-out {
-    opacity: 0;
-  }
+}
 
-  @media screen and (max-width: 768px) {
-    .text-swap{
-        font-size: 2.5rem;
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* Responsive design - simplified with fluid typography */
+@media screen and (max-width: 768px) {
+    .text-swap {
+        font-size: var(--subtitle-font-size);
     }
 }
 
 @media screen and (max-width: 480px) {
-    .text-swap{
-        font-size: 1.8rem;
+    .text-swap {
+        font-size: var(--heading-font-size);
     }
 }
 
 @media screen and (max-width: 360px) {
-    .text-swap{
-        font-size: 1.6rem;
+    .text-swap {
+        font-size: var(--heading-font-size);
     }
 }
   

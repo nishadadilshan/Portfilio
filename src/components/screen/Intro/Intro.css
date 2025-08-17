@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4rem;
+    padding: 0 var(--container-padding);
 }
 
 /* Dark theme styles */
@@ -16,8 +16,6 @@
     color: white;
     position: relative;
 }
-
-
 
 /* Light theme styles */
 #intro.light-theme {
@@ -111,46 +109,44 @@
     }
 }
 
-
-
 .bg {
     position: relative;
     z-index: 2;
     object-fit: cover;
     height: 90vh;
     max-width: 55%;
-    margin-right: 2rem;
+    margin-right: var(--item-spacing);
 }
 
 .introContent{
     height: 100vh;
     width: 50%;
-    font-size: 4rem;
+    font-size: var(--title-font-size);
     font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 2;
-    padding-right: 2rem;
-    margin-left: 2rem;
+    padding-right: var(--item-spacing);
+    margin-left: var(--item-spacing);
 }
 
 .hello {
-    font-size: 2rem;
+    font-size: var(--subtitle-font-size);
     font-weight: 300;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--small-spacing);
     opacity: 0.9;
 }
 
 .introText {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--section-spacing);
     line-height: 1.2;
 }
 
 .introName {
     color: #FFD700;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     background: linear-gradient(45deg, #FFD700, #FFA500);
     -webkit-background-clip: text;
@@ -177,10 +173,10 @@
 }
 
 .introPara {
-    font-size: 1.3rem;
+    font-size: var(--body-font-size);
     font-weight: 400;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: var(--section-spacing);
     max-width: 90%;
     opacity: 0.9;
     text-align: justify;
@@ -188,13 +184,13 @@
 
 .btn {
     margin: 0;
-    padding: 1rem 2rem;
+    padding: clamp(0.75rem, 1.5vw + 0.5rem, 1rem) clamp(1.5rem, 3vw + 1rem, 2rem);
     border-radius: 2rem;
     border: none;
     transition: all 0.3s ease;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: var(--body-font-size);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -241,8 +237,7 @@
  filter: brightness(0) invert(1) saturate(100%);
 }
 
-
-
+/* Responsive design - simplified with fluid typography */
 @media screen and (max-width: 1200px) {
     #intro {
         padding: 0 1.5rem;
@@ -263,7 +258,7 @@
 @media screen and (max-width: 768px) {
     #intro {
         flex-direction: column;
-        padding: 1.5rem 1rem;
+        padding: var(--section-spacing) var(--container-padding);
         height: auto;
         min-height: calc(100vh - 4rem);
     }
@@ -286,7 +281,6 @@
     }
     
     .introPara {
-        font-size: 14px;
         max-width: 100%;
         text-align: justify;
     }
@@ -318,7 +312,6 @@
     }
     
     .introPara {
-        font-size: 12px;
         margin-left: 1rem;
         margin-right: 1rem;
         max-width: calc(100% - 2rem);
@@ -328,46 +321,6 @@
     .introContent {
         align-items: center;
         justify-content: flex-start;
-    }
-    
-    .hello {
-        font-size: 1.5rem;
-    }
-    
-    .introName {
-        font-size: 2rem;
-    }
-    
-    .introText {
-        font-size: 1.8rem;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .introName {
-        font-size: 1.8rem;
-    }
-    
-    .introText {
-        font-size: 1.6rem;
-    }
-    
-    .hello {
-        font-size: 1.3rem;
-    }
-    
-    .bg {
-        max-width: 90%;
-        height: 50vh;
-    }
-    
-    .introPara {
-        font-size: 11px;
-        margin-bottom: 1.5rem;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        max-width: calc(100% - 3rem);
-        text-align: justify;
     }
 }
 

@@ -10,13 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import "./Portfolio.css";
 
-import Img8 from "../../../assets/img8.PNG";
-import Img9 from "../../../assets/img9.jpg";
-import Img10 from "../../../assets/img10.jpg";
-import Img11 from "../../../assets/img13.jpg";
-import Img12 from "../../../assets/img14.jpg";
-import Portfolio1 from "../../../assets/img11.PNG";
-import Portfolio2 from "../../../assets/img12.PNG";
 
 // Import SubClause images
 import SubClause1 from "../../../assets/mobileAppScreenshots/SubClause_1.jpg";
@@ -41,6 +34,12 @@ import PersonalProject2 from "../../../assets/PersonalProjectScreenShots/Persona
 import PersonalProject3 from "../../../assets/PersonalProjectScreenShots/PersonalProject_3.jpg";
 import PersonalProject4 from "../../../assets/PersonalProjectScreenShots/PersonalProject_4.png";
 import PersonalProject5 from "../../../assets/PersonalProjectScreenShots/PersonalProject_5.png";
+
+// Import Webproject images
+import Webproject1 from "../../../assets/webprojectScreenShots/Webproject_1.PNG";
+import Webproject2 from "../../../assets/webprojectScreenShots/Webproject_2.PNG";
+import Webproject3 from "../../../assets/webprojectScreenShots/Webproject_3.PNG";
+import Webproject4 from "../../../assets/webprojectScreenShots/Webproject_4.PNG";
 
 function PortfolioScreen() {
   const [isMobile, setIsMobile] = useState(false);
@@ -81,8 +80,11 @@ function PortfolioScreen() {
       topic: "Featured Projects",
       description: "Real-world web applications from my professional experience",
       images: [
-        { src: Portfolio1, alt: "Featured Project 1", isLandscape: true },
-        { src: Portfolio2, alt: "Featured Project 2", isLandscape: true },
+        { src: Webproject1, alt: "Web Project 1", isLandscape: true },
+        { src: Webproject2, alt: "Web Project 2", isLandscape: true },
+        { src: Webproject3, alt: "Web Project 3", isLandscape: true },
+        { src: Webproject4, alt: "Web Project 4", isLandscape: true },
+
       ]
     }
   };

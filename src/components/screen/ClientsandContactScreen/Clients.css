@@ -163,6 +163,8 @@
     padding: 0 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 .contactDes{
@@ -174,6 +176,8 @@
     padding: 0 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 .clientImgs{
@@ -380,6 +384,8 @@
         padding: 0 1rem;
         margin-left: 1rem;
         margin-right: 1rem;
+        text-align: justify;
+        line-height: 1.6;
     }
 
     .clientImgs {
@@ -408,8 +414,10 @@
     .contactDes {
         font-size: 12px;
         padding: 0 0.5rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
+        margin: 0 1rem;
+        text-align: justify;
+        line-height: 1.4;
+        max-width: calc(100% - 2rem);
     }
 
     .clientImgs {
@@ -443,8 +451,10 @@
     .contactDes {
         font-size: 11px;
         padding: 0 0.25rem;
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
+        margin: 0 1.5rem;
+        text-align: justify;
+        line-height: 1.4;
+        max-width: calc(100% - 3rem);
     }
 
     .link{

@@ -178,6 +178,12 @@
     letter-spacing: 1px;
 }
 
+/* Light theme specific stat label colors */
+.technical-expertise-section.light-theme .stat-label {
+    color: #333333; /* Dark text for better readability on light background */
+    opacity: 0.95;
+}
+
 /* Dark theme specific stats styles */
 .technical-expertise-section.dark-theme .stat-item {
     background: rgba(255, 255, 255, 0.05);
@@ -275,6 +281,16 @@
     font-weight: 400;
 }
 
+/* Light theme specific header text colors */
+.technical-expertise-section.light-theme .skills-header h2 {
+    color: #333333; /* Dark text for better readability on light background */
+}
+
+.technical-expertise-section.light-theme .skills-header p {
+    color: #555555; /* Darker text for better contrast */
+    opacity: 0.9;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -313,6 +329,16 @@
     font-size: 1rem;
     font-weight: 500;
     opacity: 0.8;
+}
+
+/* Light theme specific text colors for better visibility */
+.technical-expertise-section.light-theme .skill-name {
+    color: #D4AF37; /* Darker gold for better contrast on light background */
+}
+
+.technical-expertise-section.light-theme .skill-percentage {
+    color: #333333; /* Dark text for better readability on light background */
+    opacity: 0.9;
 }
 
 .skill-bar {

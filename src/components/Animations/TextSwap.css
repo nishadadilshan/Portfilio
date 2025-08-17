@@ -15,13 +15,20 @@
   @media screen and (max-width:840px) {
 
     .text-swap{
-      font-size: 1.5rem;
+      font-size: 2.5rem;
     }
   }
   @media screen and (max-width:500px) {
 
     .text-swap{
-      font-size: 1.1rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width:360px) {
+
+    .text-swap{
+      font-size: 1.6rem;
     }
   }
   

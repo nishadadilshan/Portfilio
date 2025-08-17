@@ -366,12 +366,12 @@
     }
     
     .worksDes {
-        font-size: 18px;
+        font-size: 16px;
         max-width: 100%;
     }
     
     .topic-description {
-        font-size: 1.4rem;
+        font-size: 2rem;
         max-width: 800px;
     }
     
@@ -407,7 +407,7 @@
     }
     
     .topic-description {
-        font-size: 1.3rem;
+        font-size: 2rem;
         max-width: 800px;
     }
     
@@ -440,7 +440,7 @@
     }
     
     .worksDes {
-        font-size: 15px;
+        font-size: 14px;
         max-width: 100%;
         margin-bottom: 35px;
     }
@@ -455,7 +455,7 @@
     }
     
     .topic-description {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         max-width: 800px;
     }
     
@@ -609,7 +609,7 @@
     }
     
     .topic-description {
-        font-size: 12px;
+        font-size: 1.5rem;
         max-width: 100%;
         line-height: 1.4;
     }
@@ -687,7 +687,7 @@
     }
     
     .topic-description {
-        font-size: 11px;
+        font-size: 1.3rem;
         max-width: 100%;
     }
     

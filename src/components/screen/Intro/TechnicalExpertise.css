@@ -449,11 +449,11 @@
     }
     
     .skill-name {
-        font-size: 0.9rem;
+        font-size: 1.5rem;
     }
     
     .skill-percentage {
-        font-size: 0.8rem;
+        font-size: 13px;
     }
     
     .skill-bar {
@@ -484,11 +484,11 @@
     }
     
     .skill-name {
-        font-size: 0.8rem;
+        font-size: 1.3rem;
     }
     
     .skill-percentage {
-        font-size: 0.7rem;
+        font-size: 10px;
     }
     
     .skill-bar {

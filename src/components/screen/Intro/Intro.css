@@ -334,25 +334,25 @@
     }
     
     .introName {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
     
     .introText {
-        font-size: 3rem;
+        font-size: 1.8rem;
     }
 }
 
 @media screen and (max-width: 435px) {
     .introName {
-        font-size: 3.2rem;
+        font-size: 1.8rem;
     }
     
     .introText {
-        font-size: 2.8rem;
+        font-size: 1.6rem;
     }
     
     .hello {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .bg {

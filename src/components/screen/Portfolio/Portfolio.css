@@ -125,7 +125,7 @@
     font-size: 18px;
     font-weight: 400;
     max-width: 100vw;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     position: relative;
     z-index: 2;
     padding: 0 2rem;
@@ -142,6 +142,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* First portfolio section - add extra top margin */
+.portfolio-section:first-of-type {
+    margin-top: 40px;
 }
 
 /* Portfolio Topic */
@@ -605,7 +610,7 @@
     .worksDes {
         font-size: 12px;
         max-width: calc(100% - 2rem);
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         line-height: 1.4;
         text-align: justify;
         padding: 0 0.5rem;
@@ -614,6 +619,10 @@
     
     .portfolio-section {
         margin-bottom: 30px;
+    }
+    
+    .portfolio-section:first-of-type {
+        margin-top: 20px;
     }
     
     .portfolio-topic {
@@ -688,6 +697,7 @@
     .worksDes {
         font-size: 11px;
         max-width: calc(100% - 3rem);
+        margin-bottom: 30px;
         text-align: justify;
         line-height: 1.4;
         padding: 0 0.25rem;
@@ -696,6 +706,10 @@
     
     .portfolio-section {
         margin-bottom: 25px;
+    }
+    
+    .portfolio-section:first-of-type {
+        margin-top: 15px;
     }
     
     .portfolio-topic {
@@ -769,6 +783,7 @@
     .worksDes {
         font-size: 11px;
         max-width: calc(100% - 3rem);
+        margin-bottom: 25px;
         text-align: justify;
         line-height: 1.4;
         padding: 0 0.25rem;
@@ -777,6 +792,10 @@
     
     .portfolio-section {
         margin-bottom: 20px;
+    }
+    
+    .portfolio-section:first-of-type {
+        margin-top: 10px;
     }
     
     .portfolio-topic {

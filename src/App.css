@@ -23,6 +23,7 @@ body.dark-theme {
     overflow-x: hidden;
     overflow-y: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 64px; /* Account for fixed navbar */
 }
 
 /* Light theme styles */
@@ -32,6 +33,7 @@ body.light-theme {
     overflow-x: hidden;
     overflow-y: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 64px; /* Account for fixed navbar */
 }
 
 /* App container theme styles */
@@ -118,6 +120,7 @@ button, a, .btn, .stat-item, .skill-item {
     body {
         overflow-x: hidden;
         width: 100%;
+        padding-top: 56px; /* Smaller padding for mobile navbar */
     }
     
     /* Ensure all containers respect viewport */

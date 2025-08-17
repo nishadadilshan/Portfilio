@@ -36,19 +36,26 @@ function Navbar() {
 
   return (
     <AppBar 
-      position="sticky"
+      position="fixed"
       sx={{
         backgroundColor: isDarkMode ? 'rgba(0, 0, 0, 0.95)' : 'rgba(180, 180, 180, 0.95)',
         backdropFilter: 'blur(10px)',
-        boxShadow: isDarkMode ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.1)'
+        boxShadow: isDarkMode ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.1)',
+        zIndex: 9999,
+        width: '100%',
+        top: 0,
+        left: 0,
+        right: 0
       }}
     >
       <Container maxWidth="xxl">
-        <Toolbar disableGutters style={{ marginLeft: 20, marginRight: 20 }}>
+        <Toolbar disableGutters style={{ marginLeft: 20, marginRight: 20, minHeight: '64px' }}>
+          {/* Desktop Logo */}
           <Box
             sx={{
               flexGrow: 1,
-              display: { md: "flex", xs: "none" },
+              display: { xs: "none", md: "flex" },
+              alignItems: 'center'
             }}
           >
             <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
@@ -60,6 +67,7 @@ function Navbar() {
               display: { xs: "flex", md: "none" },
               alignItems: 'center',
               gap: 1,
+              flexGrow: 1
             }}
           >
             {/* Menu Button */}
@@ -70,6 +78,7 @@ function Navbar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{ color: isDarkMode ? 'white' : 'black' }}
             >
               <MenuIcon />
             </IconButton>
@@ -90,16 +99,21 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
+                zIndex: 10000,
                 '& .MuiPaper-root': {
                   backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff',
                   color: isDarkMode ? '#ffffff' : '#000000',
                   minWidth: '200px',
                   maxWidth: '90vw',
                   marginTop: '8px',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
                 },
                 '& .MuiMenuItem-root': {
                   padding: '12px 16px',
                   fontSize: '1rem',
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? '#333333' : '#f5f5f5',
+                  }
                 }
               }}
             >
@@ -115,7 +129,7 @@ function Navbar() {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: "none", color: "inherit", width: '100%' }}
                   >
                     <Typography textAlign="center">{page.name}</Typography>
                   </Link>
@@ -131,7 +145,7 @@ function Navbar() {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "inherit", width: '100%' }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                     <ChatBubbleOutlineIcon sx={{ fontSize: 20 }} />
@@ -142,13 +156,24 @@ function Navbar() {
             </Menu>
           </Box>
           
-          {/* Logo with Theme Toggle - Right end of navbar in mobile */}
-          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: 'center', marginLeft: 'auto' }}>
-            {/* Theme Toggle - Left of logo */}
+          {/* Mobile Logo and Theme Toggle */}
+          <Box sx={{ 
+            display: { xs: "flex", md: "none" }, 
+            alignItems: 'center', 
+            gap: 1,
+            marginLeft: 'auto'
+          }}>
             <ThemeToggle />
-            <img src={logo} alt="logo-png" style={{ width: 60, height: 50 }} />
+            <img src={logo} alt="logo-png" style={{ width: 50, height: 40 }} />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          {/* Desktop Navigation Links */}
+          <Box sx={{ 
+            flexGrow: 1, 
+            display: { xs: "none", md: "flex" },
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
             {pages.map((page) => (
               <Link
                 key={page.name}
@@ -165,11 +190,15 @@ function Navbar() {
                     color: isDarkMode ? "white" : "black",
                     display: "block",
                     marginX: 2,
+                    fontWeight: 500,
+                    fontSize: '1rem',
+                    textTransform: 'none',
                     ":hover": {
                       color: "#FFD700",
                       paddingBottom: 0.5,
                       borderBottom: 3,
                       borderBottomColor: "#FFD700",
+                      transform: "translateY(-1px)",
                     },
                   }}
                 >
@@ -178,7 +207,13 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center' }}>
+
+          {/* Desktop Theme Toggle and Contact Button */}
+          <Box sx={{ 
+            display: { xs: "none", md: "flex" }, 
+            alignItems: 'center',
+            gap: 2
+          }}>
             <ThemeToggle />
             <Link
               to="contact"
@@ -188,34 +223,35 @@ function Navbar() {
               duration={500}
               style={{ textDecoration: "none" }}
             >
-                             <Button
-                 variant="contained"
-                 size="small"
-                 startIcon={<ChatBubbleOutlineIcon />}
-                 sx={{
-                   color: isDarkMode ? "rgb(30, 30, 30)" : "white",
-                   borderRadius: 15,
-                   backgroundColor: isDarkMode ? "white" : "rgb(30, 30, 30)",
-                   border: "none",
-                   padding: "8px 20px",
-                   fontWeight: 600,
-                   textTransform: "none",
-                   fontSize: "0.875rem",
-                   transition: "all 0.3s ease",
-                   "&:hover": {
-                     backgroundColor: isDarkMode ? "#f0f0f0" : "rgb(50, 50, 50)",
-                     transform: "translateY(-2px)",
-                   }
-                 }}
+              <Button
+                variant="contained"
+                size="small"
+                startIcon={<ChatBubbleOutlineIcon />}
+                sx={{
+                  color: isDarkMode ? "rgb(30, 30, 30)" : "white",
+                  borderRadius: 15,
+                  backgroundColor: isDarkMode ? "white" : "rgb(30, 30, 30)",
+                  border: "none",
+                  padding: "8px 20px",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  fontSize: "0.875rem",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    backgroundColor: isDarkMode ? "#f0f0f0" : "rgb(50, 50, 50)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                  }
+                }}
               >
                 Contact Me
               </Button>
             </Link>
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default Navbar;

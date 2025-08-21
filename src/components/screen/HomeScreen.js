@@ -5,6 +5,7 @@ import AboutScreen from "./About/AboutScreen";
 import PortfolioScreen from "./Portfolio/PortfolioScreen";
 import ClientsandContact from "./ClientsandContactScreen/ClientsandContact";
 import { Footer } from "../Footer/Footer";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 function HomeScreen() {
   return (
@@ -15,6 +16,7 @@ function HomeScreen() {
       <PortfolioScreen />
       <ClientsandContact />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
